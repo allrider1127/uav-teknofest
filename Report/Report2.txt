@@ -1,0 +1,481 @@
+İÇ
+
+İÇİNDEKİLER​
+Bölüm 1. Özet (10 PUAN)​
+
+2
+
+Bölüm 2. Organizasyonel Yapı (5 PUAN)​
+
+2
+
+Bölüm 3. Proje Takvimi (5 PUAN)​
+
+3
+
+Bölüm 4. Bütçe Analizi (5 PUAN)​
+
+3
+
+Bölüm 5. Kavramsal Tasarım Yaklaşımı (25 PUAN)​
+
+4
+
+Bölüm 6. Fayda Analizi Çalışmaları (20 PUAN)​
+
+5
+
+Bölüm 7. Üretim Planı (10 PUAN)​
+
+6
+
+Bölüm 8. Sistem Entegrasyonu ve Test Planı (20 PUAN)​
+
+7
+
+Bölüm 1. Özet (10 PUAN)
+Tasarlanan projede, afet sonrası senaryoyu simüle eden ortamda bir sabit kanatlı İHA ile bir paletli İKA’nın koordine
+çalışarak verilen lojistik problemlere otonom çözümler sağlanması hedeflenmiştir. Pnömatik silindirli mancınık sistemi ile
+fırlatılarak HTAB üzerinde otonom keşif uçuşu gerçekleştirecek İHA, güzergah tespiti YOLO mimarisiyle
+gerçekleştirilecektir. Bu tercih, geleneksel bilgisayarlı görü ve anlamsal bölütleme yöntemlerinin sırasıyla karmaşık ortam
+koşullarındaki düşük kararlılığı ve gerçek zamanlı yayın zorunluluğundaki kritik gecikmeleri nedeniyle yapılmıştır. İHA;
+henüz havadayken güzergah bilgisini üç katmanlı haberleşme mimarisi üzerinden yer istasyonu ve İKA’ya aktaracaktır.
+İHA paraşütle inişini tamamladıktan sonra operasyonel yükleri taşıyan İKA, güzergah verilerini kullanarak Hybrid A* ile yol
+planlayarak pure pursuit algoritması ile hedef bölgeye tam otonom sürüşle ulaşacaktır. İHA elektronik mimarisi itki ve
+aviyonik sistemler olmak üzere bağımsız iki güç hattında kurgulanmıştır. İKA platformu parkurdaki toprak zemin ve moloz
+engelleri göz önünde bulundurularak paletli konfigürasyonda tasarlanmıştır. Sistem tasarımında şartnamede belirtilen 25
+kg İHA ve 10 kg İKA ağırlık limitleri, 15 dakika İHA ve 10 dakika İKA görev süreleri temel sınır şartları olarak alınmıştır.
+Tüm alt sistemlerin yazılım doğrulaması X-Plane + Gazebo + ArduPlane SITL entegre simülasyon ortamında uçtan uca
+gerçekleştirilecek, ardından kademeli saha testlerine geçilecektir. Modüler donanım yapısı ve tak-çalıştır konnektör
+tasarımı sayesinde 15 dakikalık saha hazırlık süresi limiti içinde kurulum tamamlanabilecek ve arıza durumunda bağımsız
+müdahale mümkün olacaktır.
+Rapor yazımı sürecinde tüm sistem, alt görev birimlere ayrılarak yazılmıştır. Bu sayede her aşamada ilgili görev biriminin
+rolü hakkında detaylı bilgi sağlanabilmektedir. ÖDR aşamasından önce mancınık, İKA ve İHA için gerekli elektronik
+parçaların seçimleri yapılmış, gerekli parametreler taslak olarak belirlenmiştir. Bu parça ve parametre seçimleri, birbirine
+bağlı alt birimlerin koordine çalışabilmesi için yapılmıştır. Sıfırdan en uyumlu parça ve parametrelerin seçileceği bir yol
+haritası yerine öncesinde taslak olarak bu parça ve parametrelerin seçildiği, sonrasında ihtiyaçlara göre ekleme çıkarma
+yapıldığı bir plan benimsenmiştir.
+
+Bölüm 2. Organizasyonel Yapı (5 PUAN)
+Takım altı görev birimi etrafında yapılandırılmıştır. Her birim kendi teknik kapsamından sorumlu olup birimler arası
+koordinasyon kaptan tarafından yürütülmektedir.
+İKA Mekanik/Elektronik Birimi: İKA'nın şasi tasarımı, tahrik sistemi, güç dağıtımı, sensör ve bilgisayar platformu seçimi
+dahil tüm donanım altyapısından sorumludur.
+İHA Mekanik/Elektronik Birimi: İHA gövde yapısı, aviyonik mimari, güç dağıtımı, uçuş kontrolcüsü ve sensör seçimi
+dahil tüm İHA donanımından sorumludur.
+Görüntü İşleme Birimi: Açık güzergahın kamera verisi üzerinden görüntü işleme modelleri ile tespiti ve bu verilerin
+İKA’ya iletilecek veri formatına dönüşümü süreçlerinden sorumludur.
+İKA Yol Algoritması / İHA Uçuş Yazılımı & Stabilizasyon & Simülasyon Birimi: İKA otonom navigasyonu ve İHA
+otonom görev yazılımlarının geliştirilmesi, İHA’nın hareket dengesi ve simülasyon ortamının kurulmasından sorumludur.
+Haberleşme ve Yer İstasyonu Birimi: Yer İstasyonu, İHA ve İKA arasında gerçekleşecek veri aktarım süreçlerinden,
+telemetri sisteminden ve yer istasyonu kurulumundan sorumludur.
+Mancınık ve Fırlatma Birimi: İHA'nın fırlatılmasını sağlayacak pnömatik mancınık sisteminin tasarım, üretim, yeniden
+kullanılabilir olması ve testinden sorumludur.
+
+Bölüm 3. Proje Takvimi (5 PUAN)
+İKA Mekanik/Elektronik Birimi: DDR Öncesi: Paletli konfigürasyon tasarımı, fiziksel dayanıklılık simülasyonlarının
+gerçekleştirilmesi ve kritik elektronik bileşenlerin seçimi. FDR Öncesi: Şasi ve görev mekanizması detay tasarımı,
+elektronik bileşenlerin seçimi ve devre tasarımının kesinleştirilmesi. SGGS Öncesi: İKA mekanik üretiminin
+gerçekleştirilmesi, İKA üzerinde elektronik parçaların montajı ve çalışır hale getirilmesi. Fiziksel dayanıklılık ve ağırlık
+taşıma kapasitesinin testi. UHDR Öncesi: Nihai sistem kalibrasyonu, sistem ağırlık doğrulaması ve operasyonel hazır
+bulunuşluk testleri gerçekleştirilmesi.
+İHA Mekanik/Elektronik Birimi: DDR Öncesi: Aviyonik mimari, güç dağıtım şemaları ve haberleşme altyapısının
+belirlenmesi; uçuş kontrol kartı, gerekli sensörler, ESC ve servo motorların seçimi. Konfigürasyon kararının (yüksek kanat,
+konvansiyonel kuyruk, puller) kesinleştirilmesi, kanat profilinin seçimi ve ön aerodinamik analizlerin tamamlanması. İtki
+sistemi ve bataryanın seçimi, paraşüt sisteminin konsept tasarımı, MTOW hedefinin belirlenmesi. FDR Öncesi: Elektronik
+bileşen seçiminin, yapısal detay tasarımının tamamlanması. CS-VLA yük koşullarına göre spar ve gövdenin
+boyutlandırılması, CoG analizi, paraşüt boyutlandırması, kompozit kalıp tasarımların hazırlanması. SGGS Öncesi: Tüm
+elektronik bileşenler İHA gövdesine entegrasyonu, yer testleri ve RC kontrol doğrulamasının yapılması. Kanat ve gövde
+kompozit üretimi, motor ve mancınık parçalarının CNC imalatı, statik yük testi ve kütle/CoG doğrulaması. UHDR Öncesi:
+Uçuş kontrol parametreleri kalibre edilmesi, tam sistem entegrasyon uçuşları ile elektronik alt sistemin operasyonel
+yeterliliği doğrulanması. Mancınık ile fırlatma testleri, paraşüt açılma testleri, uçuş testleri ve tam görev testi ile
+operasyonel olarak hazır bulunma.
+Görüntü İşleme Birimi: DDR Öncesi: Sistem mimarisi ve teorik altyapının netleşmesi. Otonom algoritmaların detay
+tasarımının bitirilmesi ve sanal ortamda test edilebilir aşamaya geçilmesi. FDR Öncesi: Yazılım entegrasyonunun
+tamamlanması ve kapalı çevrim (SITL) sistem doğrulaması. SSGS Öncesi: Tasarlanan yazılımın çalışacağı fiziksel
+donanımların hazır hale gelmesi. UHDR Öncesi: Sistemin yarışma şartlarına uygun ve operasyonel olarak tam otonom
+görev icra edebilir hale gelmesi.
+İKA Yol Algoritması / İHA Uçuş Yazılımı & İHA Stabilizasyonu & İHA Simulasyonu Birimi: DDR Öncesi: Algoritma
+seçimi yapılması, sensör ve donanım listesi araştırılıp belirlenmesi ve sistem mimarisiyle alakalı kararların verilmesi. EKF
+lokalizasyon entegrasyonu, planner yazımı ve ROS2 NAV2 entegrasyonu. İHA kısmında parametrelerin düzenlenmesi ve
+tüm otonom görev akışı kararlaştırılıp listelenmesi. FDR Öncesi: İKA için pure pursuit yol takibi kodlanması, İHA tarafında
+X- Plane + Gazebo + ArduPlane SITL entegre simülasyon ortamı kurulup test edilmesi; MAVROS2 köprüsü ve görüntü
+işleme algoritmaları ile uçtan uca iletişim doğrulanması. SSGS Öncesi: Tam sistem entegrasyonu kurulması, saha
+denemeleri, güvenlik mekanizmaları ve hata senaryosu analizleri doğrulanması. UHDR Öncesi: Saha testlerinin son
+aşamaları yapılması, yarışma senaryosunun simüle edilmesi ve tüm sistemlerin uçuşa/göreve hazırlık onayı.
+Haberleşme ve Yer İstasyonu Birimi: DDR Öncesi: Gereksinim analizi, haberleşme mimarisinin kesinleştirilmesi, yer
+istasyonu ekran kapsamının belirlenmesi ve kritik gereksinim izlenebilirliğinin oluşturulması. DDR sırasında aviyonik
+BOM, kablaj-konnektör hesapları, güç tüketim ve batarya kapasite tabloları ile güzergâh aktarım algoritması akış şeması
+hazırlanacaktır. FDR Öncesi: Telemetri modem kabul testleri, arayüz protokolleri, yer istasyonu veri modeli ve log
+formatının tamamlanması; nihai mimari, BOM, kablaj ve sensör kalibrasyonunun kesinleştirilmesi. UHDR Öncesi: RC ve
+telemetri menzil testleri, uçuş ve otonom harekât videoları ile test sonuçlarının teslimi.
+Mancınık ve Fırlatma Birimi: DDR Öncesi: İHA’nın ağırlık, stall hızı, ağırlık merkezi, test alanı hava yoğunluğu, kanat
+alanı ve kanat profilinin maksimum taşıma katsayısı parametrelerine göre parametrik boyutlandırma ve kinematik
+analizlerinin tamamlanması; ray, slider ve tripodun muhtemel CAD tasarımlarının çizilmesi. FDR Öncesi: DDR bölümünde
+yapılan parametrik boyutlandırma ve kinematik analizlerin kesinleştirilmesi, CAD tasarımları imalata uygun halde
+sonuçlandırılması. SSGS Öncesi: Ray, slider ve tripod üretimi tamamlanması, pnömatik devre montajı yapılması, sızıntı
+testi ve dummy ağırlıkla ilk kuru atış testleri gerçekleştirilmesi. UHDR Öncesi: Tasarlanan gerçek İHA ile fırlatma testleri
+alınması, çıkış hızının doğrulanması, emniyet mekanizmasının test edilmesi, saha kurulum süreci tekrarlanarak süre
+optimizasyonu.
+
+Bölüm 4. Bütçe Analizi (5 PUAN)
+Projenin temel maliyet kalemleri aşağıda listelenmiştir. Fiyatı henüz kesinleşmemiş kalemler DDR aşamasında
+güncellenecektir.
+İKA Mekanik/Elektronik Birimi: NVIDIA Jetson Nano 4 GB / Görüntü işleme / 14.365,00 TL Stereolabs ZED 2i / Derinlik
+algılama / 20.256,75 TL. Here3 GPS / İKA konum bilgisi / 5.000,00 TL. Redüktörlü DC Motor ×2 + VESC Motor Sürücü ×2
+/ Tahrik sistemi / 3.000,00 TL. 14.8V 4S 5000 mAh LiPo + regülatör, kablo / Güç ve montaj / 3.500,00 TL. STM32
+Nucleo-F401RE / Motor kontrolü / 1.171,14 TL.
+
+İHA Mekanik/Elektronik Birimi: Pixhawk Cube Orange+ / Uçuş kontrolcüsü / 24.948,00 TL. NVIDIA Jetson Orin Nano 4
+GB / Görüntü işleme ve güzergah tespiti / 14.349,63 TL. Arducam 12MP IMX477 / Görüntü sensörü / (DDR'de
+netleşecek). Here3 GPS / Konum ve navigasyon / (DDR'de netleşecek). T-Motor AT5220 KV380 / Sabit kanat fırçasız DC
+motor / ~6.000 TL. APC 19×10E pervane (×2) / İtki / ~1.500 TL. T-Motor T80A ESC / Motor sürücü / ~3.500 TL. 6S Li-ion
+24 Ah pack (Samsung 30T 6S8P) / Güç kaynağı / ~10.000 TL. Paraşüt sistemi (D=3.15 m, ripstop nylon) + açılma
+servosu / İniş / ~2.500 TL. Dijital metal-gear servo ×4 / Kumanda yüzeyleri / ~2.400 TL. PDB + güç kabloluğu / Güç
+dağıtımı / ~700 TL. RC alıcı (FrSky R-XSR veya TBS Crossfire Nano) / Manuel kontrol / ~1.500 TL. Yapısal malzemeler
+(karbon fiber, cam fiber, epoksi, EPS/PETG köpük, karbon spar, alüminyum parçalar) / Gövde ve kanat yapısı / ~8.000
+TL. Bağlantı elemanları, konnektörler, sinyal kabloları / Montaj / ~1.500 TL.
+Haberleşme ve Yer İstasyonu Birimi: (Fiyatlar DDR aşamasında netleşecektir) Telemetri Modem Seti (İHA + Yer) /
+868/915 MHz, MAVLink destekli / İHA telemetri aktarımı. Telemetri Modem Seti (İKA + Yer) / 868/915 MHz, seri/Ethernet
+köprüleme / İKA telemetri aktarımı. Görev Verisi Aktarım Modülü / İHA→İKA rota paketi aktarımı. RC Kumanda/Alıcı
+Sistemi / Failsafe destekli emniyet kanalı. Yer İstasyonu Bilgisayarı / Dizüstü/Mini PC / Canlı izleme ve kayıt. Anten, kablo,
+konnektör, güç regülasyonu / Menzil ve aviyonik güç sürekliliği.
+Mancınık ve Fırlatma Birimi: (fiyatlar DDR aşamasında netleşecektir) Pnömatik silindir, hava tankı, basınç regülatörü,
+solenoid valf, hortum seti, alüminyum ekstrüzyon profil, T-slot elemanları, emniyet pini
+
+Bölüm 5. Kavramsal Tasarım Yaklaşımı (25 PUAN)
+İKA Mekanik/Elektronik Birimi: Parkur koşulları (toprak zemin, moloz engelleri) göz önünde bulundurulduğunda aracın
+paletli konfigürasyonda tasarlanmasına karar verilmiştir. Geniş temas yüzeyi sunan paletli sistem sayesinde yumuşak
+zemine batma riski azalmakta, yüksek çekiş kuvveti ile engel aşma kolaylaşmaktadır. Şasi tasarımı aracın ağır yük
+taşıyacağı göz önünde bulundurularak Siemens NX programından parametrik olarak tasarlanmıştır. Tahrik sisteminde
+seçilecek yüksek tork redüktörlü DC motorların VESC benzeri sürücülerle kullanılması planlanmaktadır. Sistemin beyni
+olarak NVIDIA Jetson Orin Nano, gerçek zamanlı motor kontrolü için STM32 Nucleo-F401RE kartı tercih edilmiştir.
+Çevresel algı donanımları olarak, ZED 2i Stereo kamera seçilmiştir. Güç sistemi olarak 14.8V 4S 5000 mAh LiPo batarya
+kullanılacaktır. Hedef araç ağırlığı yük harici 6 kg olarak belirlenmiştir.
+İHA Mekanik/Elektronik Birimi: Elektronik: İHA’nın elektronik mimarisi itki sistemi ve aviyonik sistemi olarak iki ayrı güç
+hattında tasarlanmıştır. Bu sayede hem bir arıza olması durumunda sistemler birbirini etkilemeyecek, hem de bir birim
+fazla güç gereksinimi duyduğunda diğer sistemdeki parçaların yetersiz voltaj sonucu kapanmasını engelleyecektir. Uçuş
+kontrolcüsü olarak gömülü IMU’ya sahip, ArduPlane yazılım desteği barındıran sektör standartı Pixhawk Cube Orange+
+tercih edilmiştir. İHA’nın üst seviye işlem birimi üzerinde görüntü işleme ve güzergah tespit algoritmalarının gerçek
+zamanlı çalışacağı NVIDIA Jetson Orin Nano seçilmiştir. Bu iki kart arası haberleşme MAVROS2 protokolü üzerinde
+sağlanacaktır. RC alıcı ayrı bir kanatta tutularak gerektiğinde pilotun manuel kontrole geçişi planlanmıştır. Güç dağıtım
+hattına acil durumlar için akım kesici eklenmiştir. Elektronik planlama yapılırken tüm bileşenlerin modüler konnektör
+yapısında bağlanması sayesinde sistemlerin bağımsız test imkanı gözetilmiştir. Motorlar, ESC’ler ve bataryaların seçimi,
+gerekli İHA mekanik parametreleri belirlendikten sonra yapılacaktır. Mekanik: Konfigürasyon kararı: Yüksek kanat
+yerleşimi, konvansiyonel kuyruk, puller motor yerleşimi tercih edilmiştir. Yüksek kanat sarkaç etkisi ile pozitif yanal
+kararlılığı doğal olarak sağlar ve gövde altı temiz hacmi keşif sensörlerinin geniş görüş açısı için boş bırakır.
+Konvansiyonel kuyruk, İHA’nın yapacağı görev için yeterli manevra gereksinimlerini karşılaması ile beraber tasarım ve
+üretim kolaylığı sağlamasından dolayı tercih edilmiştir. Puller konfigürasyon, mancınık rayı–pervane temas riskini
+geometrik olarak elimine eder ve gövde arka konisini paraşüt muhafaza bölmesi için serbest bırakır. Hız zarfı (CS-VLA
+terminolojisi): CS-VLA standardına uygun olarak hız zarfı tek bir 'seyir hızı' parametresi yerine birden fazla tanımlı hız ile
+karakterize edilmiştir. Md. 167'de geçen 'tasarımda kullanılan seyir hızı' ifadesi, V-n diyagramının ve yapısal yük
+analizlerinin esas alındığı tasarım seyir hızı V_C'dir; bu, görev sırasında fiilen uçulan operasyonel cruise hızından
+farklıdır. Tasarım değerleri: V_S = 15.2 m/s, V_LOF = 17.5 m/s (Md. 188 ≥ 1.15·V_S), V_cruise = 22 m/s (operasyonel),
+V_A = 32 m/s (Md. 167 koşul 1: ≥ V_S·√n = 29.6), V_C = 35 m/s (Md. 167 koşul 2: V_A < V_C), V_NE = 45 m/s (Md. 147
+< 50). Pozitif/negatif limit yük katsayıları n+ = +3.8 / n− = −1.5 emniyet faktörü 1.25 ile çarpılarak nihai yapısal yüklere
+ulaşılacaktır. Kök kanat profili olarak SD7062 seçilmiştir; Re ≈ 400k stall noktasında 2D Cl_max ≈ 1.45 olup, sonlu açıklık
+etkisi (AR = 6.85), washout (2-3°) ve yüzey toleransları için 3D tasarım Cl_max = 1.25 konservatif olarak alınmıştır.
+Negatif Cl_max = −0.75 (kıvrımlı profil). Yatay ve dikey kuyrukta NACA 0012 simetrik profili kullanılmıştır, yatay kuyruk
+stall açısı (≈14°) ana kanat stall açısından (≈12°) büyüktür. Tüm aerodinamik yüzeylerde çeyrek veter ok açısı 0°'dir. İtki
+sistemi: T-Motor AT5220 KV380 sabit-kanat fırçasız DC motor (24N28P, 465 g) seçilmiştir. 6S Li-ion (22.2 V) ve APC
+19×10E pervane ile üretici test verisine göre maks. statik itki 7.5 kgf, maks. elektrik gücü 1957 W. Bu konfigürasyonda
+T/W = 0.45 (Md. 137 ≥ 0.20, %127 marj) ve P/W = 0.119 W/g (Md. 178 ≥ 0.10, %19 marj) sağlanır. P/W tanımında
+aviyasyon literatüründe yerleşik olan maksimum güç/ağırlık yorumu esas alınmıştır. Cruise (V = 22 m/s) elektrik güç
+tüketimi 403 W; bu noktada motor verim eğrisinin yüksek-verim bölgesinde çalışmaktadır. Motor seçimi piyasa
+
+bulunabilirliği ve tasarım iterasyonlarına göre değişiklik gösterebileceği not edilmelidir. Enerji ve endurance: 6S Samsung
+30T 8P (48 hücre) Li-ion paket, nominal 533 Wh, 2.46 kg. %80 kullanılabilir deşarj derinliği ve %20 manevra/tırmanma
+marjı ile tasarım endurance 53 dk; Md. 185 (≥30 dk) gereksinimini karşılar ve görev süresi olan 15 dk için 3.5× rezerv
+sağlar. Akım kapasitesi 280 A, peak güç ihtiyacının çok üzerindedir. Statik kararlılık için nötr nokta MAC %54'te
+hesaplanmıştır. CoG için optimal konum %30 MAC (statik margin SM = %24 — pozitif kararlılık), izin verilen aralık ise
+%25-%35 MAC arası hesaplanmıştır. Dihedral 4.2°, spiral mode kararlılığını destekler. Mancınık çıkış hızı V_LOF = 17.5
+m/s, mancınık enerjisi ≈ 2.5 kJ. Paraşüt yarı küresel geometriye sahiptir, C_D değeri 1.40, çapı 3.15 m, alanı 7.78 m²,
+hedef sink rate 5 m/s’dir. Hedef sink rate ile şartnamedeki maks. Sink rate şartı (<7 m/s) %29 marjla sağlanır. Paraşüt
+sistemi toplam 700 g, gövde içi 5 L bölmede taşınır. Paraşüt bölmesinin konumu yapısal dayanımı korumak için ağırlık
+merkezine olabilecek en yakın konumda uçuş bilgisayarından aldığı komutlar doğrultusunda yaylı ve servolu bir sistem ile
+bulkhead ana gövdeden ayrılarak paraşütün açılmasını sağlayacaktır. Muhafaza ve modülerlik: İHA, 2 m × 1 m × 1 m
+muhafaza kutusuna kanat ortadan ayrılarak ve kuyruk söküm ile yerleştirilir. Hızlı söküm/yeniden montaj sahada
+gerçekleştirilebilir. Tüm yapısal birleşimler birincil mekanik bağlantılara dayalıdır; sürtünme bazlı sabitleme
+kullanılmamıştır.
+Görüntü İşleme Birimi: Tam otonom uçuş gerçekleştirecek İHA’nın Hedef Tespit Alan Bölgesi (HTAB) içerisindeki açık
+güzergahı tespiti, üzerindeki algılayıcılar ve görüntü işleme algoritmaları ile sağlanacaktır. Görüntü işleme görevi bu
+konseptte, "asgari 30 metre irtifadan elde edilen anlık görsel veriyi analiz ederek afet bölgesini simüle eden moloz
+yığınları ve engellerle kapatılmış iki rotayı eleyip açık olan tek rotayı tespit eden, eş zamanlı olarak Yer Kontrol
+İstasyonu'na aktarılacak veriyi anlamlandıran yazılımsal sistem" olarak tanımlanmıştır. Yapılan literatür taraması ile bu
+tanıma uyan ve İHA üzerinde otonom güzergah tespiti için kullanılabilecek üç ana yöntem belirlenmiştir: geleneksel
+bilgisayarlı görü (kenar tespiti ve renk/şekil filtreleme), anlamsal bölütleme (semantic segmentation - piksel bazlı
+sınıflandırma) ve derin öğrenme tabanlı nesne tespiti (YOLO türevi mimariler). Geleneksel bilgisayarlı görü yöntemleri,
+donanım gereksiniminin düşük olmasına rağmen afet alanındaki karmaşık fiziksel engeller (moloz, bariyer vb.) ve uçuş
+sırasındaki gölge/ışık değişimleri altında stabil bir tespit sunamayacağı düşüncesiyle elenmiştir. Anlamsal bölütleme
+yöntemleri ise güzergâhın piksel bazında kusursuz tespitini sağlayabilmesine karşın, donanım üzerinde yaratacağı ağır
+işlem yükünün hedef tespitinin canlı yayınlanması zorunluluğunda kritik gecikmelere sebep olacağı ön görüldüğünden
+şimdilik elenmiştir. Derin öğrenme tabanlı nesne tespiti (hafifletilmiş YOLO mimarileri) ise, sistemin engelleri tespit edip
+açık rotayı hızla çıkarsaması probleminde işlem hızı (yüksek FPS) ve doğruluk oranı arasında en uygun mühendislik
+dengesini sunması sebebiyle tercih edilmiştir. Bu algoritmanın çalışacağı gömülü sistem seçimi, kamera spesifikasyonları
+ve model eğitimi için oluşturulacak sentetik/gerçek veri seti parametrelerinin seçim kriterleri “Bölüm 6”da listelenmiştir.
+İKA Yol Algoritması / İHA Uçuş Yazılımı & İHA Stabilizasyonu & İHA Simulasyonu Birimi: İKA Yol Algoritması: İKA,
+İHA’dan gelen koordinat listesini ve noktaların yönelimlerini alacaktır. Lokalizasyon kısmında GPS ve IMU verileri EKF ile
+filtrelenecektir. Hem global, hem de local planlama Hybrid A* algoritması ile sağlanacaktır. A*’ın planladığı yolu takip
+amaçlı pure pursuit algoritması kullanılacaktır.
+İHA Uçuş Yazılımı Mimarisi: Pixhawk Cube Orange+ üzerinde Arduplane yazılımı çalıştırılacaktır. Otonom görev akışı İHA
+için mancınık ile fırlatılma, tırmanma, waypoint dizisi oluşturma, iniş bölümlerinden oluşacaktır. Tarama sırasında görüntü
+işleme modülü İKA için waypoint dizisi hesaplayacak ve mesajı İKA’ya iletecektir.
+Simülasyon Mimarisi: X-Plane + Gazebo + ArduPlane SITL entegre sistemi kullanılacaktır. X-Plane uçuş fiziği sağlarken
+Gazebo sensörleri ROS 2 üzerinden yayınlayacak, MAVROS2 köprüsü ArduPlane ile haberleşmeyi yönetecektir. Yer
+istasyonu olarak QGroundControl entegre edilecektir.
+Haberleşme ve Yer İstasyonu Birimi: Haberleşme mimarisi üç katman üzerine inşa edilmiştir: telemetri katmanı, görev
+verisi katmanı ve manuel kontrol katmanı. Telemetri katmanı; İHA ve İKA’nın konum, hız ve irtifa bilgilerini yer istasyonuna
+periyodik olarak iletir. Görev verisi katmanı; İHA’nın tespit ettiği açık güzergah bilgisini İKA ve yer istasyonuna aktarır.
+Manuel kontrol katmanı ise RC kontrolü ayrı tutarak gerektiğinde manuel kontrole geçişin; diğer haberleşme süreçleri
+tarafından aksatılmasını engeller. Yer istasyonu arayüzünde canlı harita, İHA ve İKA telemetri panelleri, güzergâh tespit
+durumu, rota aktarım durumu ve alarm/log paneli bulunmaktadır. Hata tespit kolaylığı için aktarılacak her veri paketi;
+zaman damgası, gönderen ve alıcı kimliği, mevcut görev aşaması bilgilerini içerir.
+Mancınık ve Fırlatma Birimi: Şartname gereği tasarlanan İHA’nın kalkışı “mancınıkla fırlatma” şeklinde
+gerçekleştirilecektir. Mancınık kelimesinin tanımı “bir nesneyi öncesinde depoladığı potansiyel enerjiyi anlık olarak serbest
+bırakmak yoluyla ivmelendirici mekanik sistem” olarak tanımlanmıştır. Literatür taraması ile bu tanıma uyan ve İHA
+kalkışına elverişli üç adet mancınık türü belirlenmiştir: elastik halatlı, mekanik yaylı ve pnömatik silindirli mancınık. Bu
+mancınık türlerinin avantaj ve dezavantaj karşılaştırmasına geçilmeden önce sistemde mancınığın rolü ve belirlenmesi
+gereken parametreler araştırılmıştır. Mancınık temel olarak belirli bir açıda (θ), seçilecek mancınık türüne göre sabit veya
+değişken bir büyüklükte kuvvette (F), belirli bir ray uzunluğunca, belirli kütledeki İHA’ya, belirli bir kuvvet uygulama
+noktasından (İHA ağırlık merkezi) kuvvet uygulayarak İHA’yı belirli bir çıkış hızına (Vs) ulaştıracaktır. Ayrıca mancınığın
+
+ray sonunda İHA’dan ayrılma mekanizması, harekete başlangıç tetikleme mekanizması ve slider frenleme mekanizması
+tasarlanan mancınıkta göz önünde bulundurulacak faktörler arasındadır. Bu faktörler göz önünde bulundurulduğunda
+elastik halatlı mancınık sistemi düşük maliyeti ve teknik basitliğine rağmen elastik halatın yorulma ömrü ve sıcaklık
+bağımlılığı nedeniyle atışlar arasında stabil bir çıkış hızı sunamayacağı düşüncesiyle elenmiştir. Mekanik yaylı mancınık
+ise F=kx karakteristiği nedeniyle İHA’ya mancınık boyunca sabit kuvvet uygulanamayacağı için çıkış hızı
+hesaplamalarının sade olması beklendiği için şimdilik elenmiştir. Pnömatik silindirli mancınık sistemi ise ray boyunca
+lineer ve neredeyse stabil bir kuvvet uygulaması sebebiyle fiyat ve teknik karmaşıklık parametrelerinde dezavantajlı
+olmasına rağmen tercih edilmiştir. Pnömatik silindirli mancınık sistemine ait yukarıda belirtilen parametrelerin seçim
+kriterleri “Bölüm 6”da listelenmiştir.
+
+Bölüm 6. Fayda Analizi Çalışmaları (20 PUAN)
+İKA Mekanik/Elektronik Birimi: Tekerli alternatifler yerine tercih edilen paletli konfigürasyon yaklaşık %30’luk bir çekiş
+kuvveti avantajı sağlamaktadır. 10 dakikalık görev için yaklaşık 10 Wh enerji yeterli olmasına rağmen batarya kapasitesi
+72 Wh seçilerek engel aşım sırasındaki karşılaşılacak akım piklerine karşı önlem alınmıştır.
+İHA Mekanik/Elektronik Birimi: İtki ve aviyonik hatları ayrılarak hatların birbirini etkileme durumu ortadan kaldırılmıştır.
+Pixhawk Cube Orange+ üzerindeki çift IMU yapısı sensör yedekliliği sağlayarak uçuş kararlılığını artırmaktadır. RC
+modülünün diğer modüllerden bağımsız olması sayesinde kolayca manuel moda geçebilmesi sağlanmıştır. Modüler
+elektronik yaklaşımı sayesinde aktif görevde olmayan bileşenlere giden güç kesilebilecek, tüm bileşenler görevdeyken
+bazı bileşenlerin düşük voltaj alması engellenecektir.
+Görüntü İşleme Birimi: İrtifa arttıkça FOV genişlemekte ve tek bir karede 50x50 metre boyutlarındaki Hedef Tespit Alan
+Bölgesi'nin (HTAB) bütünüyle tespiti kolaylaşmaktadır ancak piksel detayı azalmaktadır. Görüntü işleme modelinin
+çalışacağı donanım parametreleri henüz kesinleşmemiş olduğu için optimum tespit performansı 720p/1080p çözünürlük
+bandında varsayılmıştır. Rüzgar koşulları sebebiyle yaşanacak kamera sarsıntıları, çevresel ışık yansımaları ve iletişim
+bandı daralmaları göz önünde bulundurularak mutlak doğruluk oranından taviz verilip, yüksek kare hızında (FPS)
+çalışabilen hafifletilmiş bir algoritma modeli ile ilerlenmesine karar verilmiştir.
+İKA Yol Algoritması / İHA Uçuş Yazılımı & İHA Stabilizasyonu & İHA Simulasyonu Birimi: İHA’nın havadan, İKA yola
+çıkmadan önceden yol hesaplaması, İKA’nın kör navigasyon yapmasına kıyasla görev süresini önemli ölçüde azalacaktır.
+Fayda-Maliyet karşılaştırdığımızda, Hybrid A* + occupancy grid kombinasyonu, dar alanlarda hızlı ve güvenli yol üretimi
+sağlayacaktır. ArduPlane firmware kullanımı kolaylık sağlayacak ve maliyeti azaltacaktır. Aksaklık Minimize
+Mekanizmaları: İletilen rotanın yanlış çıkması durumunda araç yol tespiti sağlayamayacak, araç harekete
+başlamayacaktır. Pil düşüklüğü durumunda araç güvenli duruş moduna geçecektir.
+Haberleşme ve Yer İstasyonu Birimi: Üç katmanlı mimarisi sayesinde paket kaybı veya kanal yoğunluğunda manuel
+kontrol kabiliyeti korunmaktadır. Her veri paketinin çeşitli parametrelerce etiketlenmesi sayesinde hata tespiti
+kolaylaşmaktadır.
+Mancınık ve Fırlatma Birimi: Pnömatik silindirli mancınık sisteminde belirtilen parametrelerin avantaj ve dezavantajları
+karşılaştırılmıştır. Çıkış hızı belirlenirken henüz İHA parametreleri kesinleşmemiş olduğu için stall hızı 12-14 m/s bandında
+varsayılmıştır. Gereksinimlerde çıkış hızı, stall hızının en az 1.15 katı olarak belirlenmesine rağmen rüzgar ve sürtünme
+kayıpları sonucu oluşacak belirsizlik göz önünde bulundurularak çıkış hızından taviz verilerek stall hızının 1.3 katı ile
+ilerlenilmesine karar verilmiştir. Vs = 15.2 m/s varsayımıyla hedef çıkış hızı 19,76 m/s'dir. Ayrıca İHA’nın mancınıktan
+kalkış açısı arttıkça irtifa kazanımı artmakta ancak stall riski de artmaktadır. Burada konuda belirsiz parametreler
+nedeniyle net bir açı belirlenmemiş olmakta olup minimum stall hızı ve uçağın dayanabileceği G kuvvetine göre bir açı
+seçimi yapılmasına karar verilmiştir.
+Genel Görev Başarım Matrisi:
+Alt Sistem
+
+Görev Fonksiyonu
+
+Performans Hedefi
+
+Temel Risk
+
+Risk Azaltma Yaklaşımı
+
+İKA Platform
+
+Engelli parkurda
+otonom navigasyon.
+
+Görev süresi <10
+dk, ağırlık <6 kg.
+
+Zemin batması, engel
+takılması.
+
+Paletli konfigürasyon.
+
+İHA Platform
+
+Otonom keşif uçuşu
+ve güzergah tespiti.
+
+Görev süresi <15
+dk, ağırlık <25 kg.
+
+Stall, rüzgar, yapısal kırım.
+
+Vs ≥ 1.3×Vstall güvenlik
+marjı, kademeli uçuş testleri.
+
+Görüntü İşleme
+
+HTAB'daki açık
+güzergahın tespiti.
+
+Gerçek zamanlı
+tespit, hakem onayı.
+
+Işık değişimi, irtifa-piksel
+kaybı, termal throttling.
+
+Hafifletilmiş YOLO, çoklu
+ışık koşulunda eğitim.
+
+İHA Uçuş Yazılımı
+& İKA Yol
+Algoritması
+
+İHA otonom görev
+akışı, İKA güzergah
+takibi.
+
+İHA tam otonom
+görev, İKA HB'ye
+<10 dk'da ulaşım.
+
+Görev akışı hatası, waypoint
+sapması, yanlış rota,
+lokalizasyon kayması.
+
+ArduPlane SITL + Gazebo
+doğrulaması, Hybrid A* +
+pure pursuit, EKF füzyon.
+
+Haberleşme
+
+İHA→İKA güzergah
+aktarımı, telemetri.
+
+İnişten önce tam
+aktarım.
+
+RF kesintisi, paket kaybı.
+
+Üç katmanlı mimari. Pakete
+özgü etiketleme.
+
+Mancınık
+
+Tekrarlanabilir İHA
+fırlatma sistemi.
+
+Çıkış hızı ≥19.76
+m/s, stabil atışlar.
+
+Basınç kaybı, titreşim, açı
+sapması.
+
+Pnömatik sistem, sızıntı
+testi, 5 ardışık atış.
+
+Bölüm 7. Üretim Planı (10 PUAN)
+İKA Mekanik/Elektronik Birimi: Şasi bileşenleri alüminyum alaşımından CNC veya lazer kesim ile üretilecektir. Araç
+kabuğu hafiflik, darbe ve yanma dayanımı sağlayan kevlar/karbon fiber elyafların tabakalı ve sandviç yapıda kullanımı ile
+üretilecektir. Üretim metodu olarak ıslak serim tercih edilecektir. Sensör tutucular ve özel muhafaza parçaları ABS
+filamenti ile 3B baskı alınarak imal edilecektir. Montajda hızlı söküm-takım imkânı sağlayan cıvata-somun bağlantıları
+tercih edilmekte olup titreşime maruz bölgelerde fiberli somunlar kullanılacaktır.
+İHA Mekanik/Elektronik Birimi: Elektronik: Aviyonik komponentlerin korunması ve yapısal bütünlüğün sağlanması
+amacıyla özel PCB taşıyıcılarının ve muhafaza kutularının 3B yazıcı ile üretilmesi planlanmaktadır. Güç dağıtımında
+yüksek akım taşıma kapasitesine sahip bakır yollu özgün PDB tasarımı kullanılacak, tüm kablolama setlerinde EMI/RFI
+koruması için blendajlı yapılar tercih edilecektir. Sensör ve kontrol kartlarının gövde titreşiminden izolasyonu için
+poliüretan bazlı sönümleme materyalleri kullanılacaktır. Yapısal felsefe: Ana yapısal birleşimler birincil mekanik
+bağlantılara (cıvata, pim, kilit) dayalıdır; sürtünme veya yapıştırıcıya dayalı tek-yol sabitleme kullanılmaz. Yapısal
+tasarımda emniyet faktörü 1.25 ve CS-VLA yük koşulları esas alınacaktır; pozitif/negatif limit manevra yük katsayıları
++3.8/−1.5 referans alınarak kanat, kuyruk ve gövde boyutlandırılacaktır. Malzeme seçimi gerekçesi: Kanat sparı tek-yön
+karbon fiber pultruded tüp (yüksek özgül mukavemet, tekrarlanabilir kalite); kanat ve gövde kabuğu cam fiber +
+EPS/PETG sandviç (ağırlık-mukavemet dengesi, üretim kolaylığı, hasar toleransı); motor montaj plakası ve mancınık
+arayüz noktaları 6082-T6 alüminyum (yorulma dayanımı). Detaylı malzeme listesi DDR aşamasında üretici sertifikalarıyla
+birlikte raporlanacaktır. İHA parçalarının üretimi için kanat ve kuyruk yüzeyleri CNC ile kesilen EPS köpük çekirdek
+üzerine vakum-bagging kompozit kaplama yapılacaktır. Gövde kabuğu negatif kalıp + el yatırma kompozit ile çıkarılacak,
+motor mount ve mancınık arayüz noktaları CNC frezeleme işlemine tabi tutulacaktır. Aviyonik raf ve küçük detay parçalar
+3D baskı (PETG, PA-CF) olacaktır. DFM/DFA prensiplerine bağlı kalınması adına minimum bağlantı çeşitliliğine dikkat
+edilecek, tek-yön kompozit kat dizilimi -üretim hatasını azaltmaya katkı sunar- ve modüler kanat birleşimi (sahada
+söküm-montaj) yapılacaktır. Parçalar oluşturulurken İHA paketleme gereksinimleri göz önünde bulundurulacaktır. Yapısal
+kütleyi azaltmak için motor mount ve mancınık arayüz plakaları topoloji optimizasyonu ile boyutlandırılacaktır; nihai
+geometriler FDR aşamasında doğrulanacaktır.
+Haberleşme ve Yer İstasyonu Birimi: İHA ve İKA üzerindeki modemler titreşim altında gevşemeyecek şekilde vidalı
+braket ve ikincil emniyet bağıyla sabitlenecektir. Kablaj planında güç ve veri hatları ayrı demetler halinde etiketlenecek;
+kritik bağlantılar kilitli konnektör ve ısı makaronuyla korunacaktır. Anten kabloları bükülme yarıçapı ve RF kaybı dikkate
+alınarak kısa tutulacak olup kanat, pervane ve paraşüt mekanizmasıyla çakışmayacak şekilde konumlandırılacaktır. Yer
+istasyonu yazılımı tek bilgisayarda çalışacak şekilde paketlenecek; görev öncesi konfigürasyon kontrol listesiyle
+doğrulanacaktır. Sistem kurulumu 15 dakikalık saha hazırlık süresi içinde tamamlanabilecek modüler iş akışına uygun
+tasarlanmaktadır.
+Mancınık ve Fırlatma Birimi: Rayın gövdesinin dayanıklı olması amacıyla alüminyum ekstrüzyon profil ve T-slot
+birleşimden oluşması planlanmaktadır. Kayar yüzey olarak sürtünme katsayısı düşüklüğü nedeniyle (μ≈0.05-0.08)
+UHMW-PE yüzey kullanılması planlanmaktadır. Sistemi ayakta tutacak temel tripod gövdesinin çelik/alüminyum profillerin
+civatalı birleşiminden oluşması planlanmaktadır. Pnömatik bileşenler (silindir, valf, regülatör, tank) İHA hakkında gerekli
+parametreler belirlendiğinde endüstriyel tedarik edilecektir. İHA’ya kuvvet uygulayacak slider’ın ABS filament ile 3B
+yazıcıdan basılması planlanmaktadır.
+
+Bölüm 8. Sistem Entegrasyonu ve Test Planı (20 PUAN)
+Sistem entegrasyonu kademeli olarak yürütülecektir. İlk aşamada İHA gövdesine aviyonik bileşenler ve İKA şasisi üzerine
+tahrik sistemi monte edilerek her iki platformun temel hareket yeterliliği bağımsız olarak doğrulanacaktır. İkinci aşamada
+görev bilgisayarları, sensörler ve haberleşme modülleri entegre edilerek alt sistemler arası veri akışı test edilecektir. Son
+aşamada İHA ve İKA'nın koordineli görev icrası tam zincir halinde doğrulanacaktır.
+
+İKA Mekanik/Elektronik Birimi: Test kapsamında engel aşma başarı oranı ve eğim tırmanma kapasitesi gerekli parkur
+ortamları oluşturularak test edilecektir. Aracın belirlenen yükleri taşırken yaptığı enerji sarfiyatı sahada ölçülecek, batarya
+yeterliliği kontrol edilecektir.
+İHA Mekanik/Elektronik Birimi: Elektronik: İtki ve aviyonik hatlarının kurulumu sonrasında sensör, RC alıcı, motorlar ve
+ESC bağlantıları tamamlanacaktır. Sensör testlerinde veri tutarlılığı, kontrol testlerinde RC komutları ile motorun verdiği
+tepkinin uyumu, güç testlerinde uçuş boyunca parçaların çektiği akım değerleri ve batarya yeterliliği test edilecektir.
+Hatların ayrı ayrı testleri tamamlandıktan sonra tüm elektronik bileşenlerin entegre çalıştığı yer testi ve kademeli uçuş
+testleri ile operasyonel yeterlilik doğrulanacaktır. Statik thrust testi: T-Motor AT5220 KV380 + APC 19×10E + T-Motor
+T80A ESC kombinasyonu, montaj sonrası load-cell test düzeneğinde 6S nominal voltajda 0%-100% throttle aralığında
+karakterize edilecektir. Başarı kriteri: statik thrust ≥ 5.5 kgf (T/W ≥ 0.33 marjı için). Yapısal statik yük testi: Kanat sparı,
+üretim sonrasında kum torbası yöntemi veya hidrolik silindir ile %100 limit yük (n = +3.8) altında test edilecek; sehim ve
+gerilme ölçümleri yapılacaktır. Başarı kriteri: yedek faktör (RF) > 1.0. Modal/titreşim testi: Komple uçak yapı, motor
+çalışma RPM aralığında impact-hammer modal analizi ile karakterize edilecek; ilk 5 doğal frekans ve modal katılım
+faktörleri tablo halinde sunulacaktır. Motor harmonikleri ile yapısal mod örtüşmesi olmaması doğrulanacaktır. Aerodinamik
+ve performans doğrulama: Kanat-gövde birleşimi ve kontrol yüzeyleri için XFLR5 + ANSYS Fluent CFD analizleri, statik
+kararlılık türevleri ve 6-DOF uçuş simülasyonu. Sonuçlar uçuş testleri ile karşılaştırılacaktır. Kütle ve CoG doğrulaması:
+İHA, üretim sonrası sahada hassas terazi ile tartılacak ve CoG, askıdan ölçüm yöntemi ile doğrulanacak. Kabul kriteri:
+MTOW = 16.5 ±0.5 kg, CoG = %30 ±%3 MAC. Kabul testleri: Mancınık atış denemesi (boş gövde + dummy mass),
+aviyonik bench test (telemetri menzil 5 km), paraşüt açılma testi (uçuş ve yer testi), tam görev simülasyonu (otonom uçuş
++ İKA'ya rota aktarımı + paraşüt iniş).
+Görüntü İşleme Birimi: Görüntü işleme modeli, dijital testlerde afet senaryolarını ve çeşitli engel konfigürasyonlarını
+simule eden veri setleri ile eğitilecektir. Model performansı karışıklık matrisi üzerinden doğruluk, hassasiyet ve duyarlılık
+metrikleriyle değerlendirilecek, donanım kısıtlarına göre FPS-doğruluk dengesi optimize edilecektir. Ağ simulasyon
+araçları ile veri iletişim hattında meydana gelebilecek paket kaybı veya bant genişliği daralması senaryoları ile veri
+aktarım protokollerinin kararlılığı test edilecektir. Fiziksel testlerde sistem 15 dakika boyunca tam işlem yükünde
+çalıştırılarak termal stres ve throttling davranışı incelenecektir. Nihai saha testinde asgari 30m irtifadan test uçuşu
+gerçekleştirilerek sistemin açık güzergahı tespit edebilme kabiliyeti ve elde edilen verinin yer istasyonuna canlı
+aktarılabilirliği doğrulanacaktır.
+İKA Yol Algoritması / İHA Uçuş Yazılımı & İHA Stabilizasyonu & İHA Simulasyonu Birimi: EKF lokalizasyonu IMU ve
+GPS kullanacaktır. Hybrid A* planner ROS2 Nav2 simülasyonunda koşturulur. X-Plane + Gazebo + ArduPlane SITL
+entegre simülasyon ortamında otonom uçuş akışı ve görüntü işleme pipeline’ı (Gazebo kamera → YOLO → waypoint →
+MAVROS2 → ArduPlane) uçtan uca test edilecektir. ArduPlane SITL’de otonom görev akışı tamamlanır. MAVROS2 ile
+İHA Jetson ↔ Cube Orange haberleşmesi doğrulanacaktır. İHA görüntü işlemesi ardından waypoint oluşturulması, bu
+waypointlerin de İKA’ya iletilmesi test edilecektir. Simülasyon ortamlarında testler tamamlandıktan sonra, gerçek dünyada
+yarışma formatında testler gerçekleştirilecektir.
+Haberleşme ve Yer İstasyonu Birimi: Birim Testi: İHA modem, İKA modem, RC alıcı ve yer istasyonu arayüzü ayrı ayrı
+çalıştırılarak port, veri formatı ve log kayıtlarının doğrulanması. Masaüstü Entegrasyon: İHA ve İKA verilerini simüle
+edilerek yer istasyonunda telemetri panelleri ve alarm durumlarının testi. Rota Paketi Testi: Örnek güzergah paketi
+İHA’dan İKA’ya gönderilerek onay yanıtı ve yer istasyonunda canlı izleme doğrulanacaktır. HIL/Simülasyon: İHA kalkışı,
+rota tespiti, İKA'ya veri aktarımı ve İKA otonom sürüş testi simülasyonda test edilecektir. Menzil Testi: RC kumanda ve
+telemetri sistemleri çeşitli mesafelerde test edilerek paket kayıpları, RSSI ve failsafe davranışları raporlanacaktır. Saha
+Görev Testi: Görevin tamamı sahada gerçekleştirilerek İHA inişinden önce rota aktarımının tamamlandığı ve İKA rota
+takibi doğrulanacaktır.
+Mancınık ve Fırlatma Birimi: Mancınık temel isterleri uçağa belirlenen açıda belirlenen kuvveti uygulaması olarak
+belirlenmiştir. Bu isterler doğrultusunda kontrol edilmesi gereken faktörler pnömatik bileşenlerin basınç kaybı
+yaşamaması, sistemin titreşmemesi ve atış açısının değişmesi, tekrar atışlarda stabil atışlar gerçekleştirmesi, kurulum
+süresinin kısa olması olarak belirlenmiştir. Bu isterlerin test edilmesi için dijital ve fiziksel ortamlarda testler kurgulanmıştır.
+Dijital Testler: Enerji dengesi ve kinematik modelin MATLAB/Spreadsheet ortamında simülasyonu yapılacaktır. Silindir
+çapı, basınç, ray uzunluğu ve açı değişkenleri fayda analizi çalışmaları sonucunda güncellenerek çıkış hızı ve g yükü
+doğrulanacak; farklı İHA kütle senaryolarında sistemin performans zarfı çıkarılacaktır. Fiziksel Testler: Pnömatik devrede
+belirlenecek bar basınç seviyesinde bekletilerek sızıntı testi, dummy ağırlıkla kuru atışlarda çıkış hızı ölçümü, 5 ardışık
+atışta hız sapması tespiti, ivmeölçer ile g yükü doğrulaması, basınç yüklü durumda emniyet pininin tutma kapasitesi testi
+gerçekleştirilmesi planlanmıştır.
+
+

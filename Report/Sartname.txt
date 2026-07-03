@@ -1,0 +1,1478 @@
+ADVANCED
+AUTONOMOUS SYSTEMS
+DESIGN AND OPERATION
+COMPETITION
+2026
+
+0
+
+CONTENTS
+TABLES .................................................................................................................... 3
+VERSIONS ............................................................................................................... 4
+DEFINITIONS and ABBREVIATIONS ............................................................................ 5
+1.
+
+PURPOSE AND SCOPE....................................................................................... 7
+
+2.
+
+COMPETITION DESCRIBTION ............................................................................. 7
+2.1. Competition Area and Operational Environment ............................................... 7
+2.2. Mission Workflow ........................................................................................... 8
+2.2.1. Takeoff .................................................................................................... 8
+2.2.2. Reconnaissance and Route Identification: ................................................. 9
+2.2.3. Data Transmission: ................................................................................... 9
+2.2.4 Landing .................................................................................................... 9
+2.2.5. Ground Operation .................................................................................... 9
+2.2.6. Mission Completion ............................................................................... 10
+
+3.
+
+COMPETITION SCHEDULE ............................................................................... 10
+
+4.
+
+COMPETITION PARTICIPATION REQUIREMENTS ................................................ 11
+4.1. Team Formation ........................................................................................... 13
+4.2. Advisor Responsibilities ................................................................................ 14
+4.3. Process Information ..................................................................................... 14
+4.4. Application Principles ................................................................................... 15
+
+5. COMPETITION TECHNICAL PROJECT PROCESS .................................................... 15
+5.1. Preliminary Review Report (PRR).................................................................... 15
+5.2. Detailed Review Report (DRR) ....................................................................... 16
+5.3. Final Review Stage (FRS): .............................................................................. 17
+5.3.1. Final Review Report (FRR) ....................................................................... 17
+5.3.2. Drone Mission Test Flight ........................................................................ 18
+5.4. System Rewiew Presentation (SRP): ............................................................... 18
+5.5. Flight Readiness Review Report (FRRR): ......................................................... 19
+6. COMPETITION IMPLEMENTATION PRINCIPLES ..................................................... 19
+6.1. Before the Competition ............................................................................. 21
+6.2. Competition Sequence.............................................................................. 21
+
+1
+
+6.3. After the Competition ................................................................................... 23
+6.4. Conditions for Flight to be Deemed Invalid ..................................................... 24
+7. REVIEW and SCORING ........................................................................................ 24
+8. AWARDS ............................................................................................................ 27
+8.1. TUSAŞ Special Award .................................................................................... 27
+9. ADMINISTRATIVE PROVISIONS ............................................................................ 27
+10. CONTACT ......................................................................................................... 28
+11. GENERAL RULES .............................................................................................. 28
+12. ETHICAL RULES ................................................................................................ 29
+Statement of Responsibility .................................................................................... 29
+
+2
+
+TABLES
+Table 1. Competition Schedule
+Table 2. Preliminary Review Report Assessment Criteria
+Table 3. Detailed Review Report Assessment Criteria
+Table 4. Final Review Report Assessment Criteria
+Table 5. Flight Readiness Review Report Assessment Criteria
+Table 6. Competition Review and Scoring Criteria
+Table 7. Competition Awards
+
+3
+
+VERSIONS
+Table. Versions
+VERSIONS
+
+DATE
+
+V1
+
+02.03.2026
+
+V2
+
+13.04.2026
+
+4
+
+DESCRIPTION
+TEKNOFEST 2026 First
+Version
+TEKNOFEST 2026 Second
+Version
+
+DEFINITIONS and ABBREVIATIONS
+The abbreviations used within the scope of this specification and their corresponding
+definitions are provided in this section.
+ARB: Advisory and Review Board
+UAV: Unmanned Aerial Vehicle
+UGV: Unmanned Ground Vehicle
+TDZ: Target Detection Zone
+UAV-LZ: UAV Launch Zone
+UAV-OZ: UAV Operation Zone
+UGV-PZ: UGV Positioning Zone
+TZ: Target Zone
+UAV-LZ: UAV Landing Zone
+PRR: Preliminary Review Report
+DRR: Detailed Review Report
+FRR: Final Review Report
+FRS: Final Review Stage
+FRP: Final Review Presentation
+SRP: System Review Presentation
+FRRR: Flight Readiness Review Report
+Cdifficulty: Difficulty Coefficient
+wUAV: UAV Weight Score
+dUAV: UAV Mission Duration Score
+dpreparation: Preparation Duration Score
+wUGV: UGV Weight Score
+wpayload: UGV Payload Score
+dUGV: UGV Mission Duration Score
+Smission: Mission Success
+S: Competitor Performance Score
+
+5
+
+STI: Technical Inspection Performance Score
+Sflight: Flight Performance Score
+Ssportmanship: Sportsmanship Score
+Ddeduction: Deduction Score
+
+6
+
+1. PURPOSE AND SCOPE
+The Advanced Autonomous Systems Design and Operation Competition, organized by
+Turkish Aerospace Industries (TUSAŞ), aims to guide young talents toward the future of
+aerospace and space technologies in line with our country’s vision of a fully independent
+defense industry. The competition invites associate, undergraduate, and graduate-level
+students to become an integral part of our defense industry, while providing them with the
+opportunity to develop innovative solutions to real-world problems and transform their
+ideas into prototypes.
+It is aimed that the younger generations, who will shape the future of the defense industry,
+enhance their engineering capabilities, gain experience in complex system design, and
+acquire the competence to contribute to global advancements in UAV technologies. This
+initiative is committed to enabling young participants to take an active role in Türkiye’s
+technology initiative and to positioning our country as a center of excellence in this field.
+The competitions are organized under the coordination of TUSAŞ within the scope of
+TEKNOFEST, with the vision of expanding and strengthening the national aerospace
+ecosystem. The definition of technical rules, supervision of design processes, and
+performance review are carried out by the Advisory and Review Board (ARB), consisting
+of expert engineers from TUSAŞ.
+This document covers all technical requirements, terms of participation, and the ethical,
+safety, and technical guidelines to be followed by all participants in the competition.
+
+2. COMPETITION DESCRIBTION
+Within the scope of the Advanced Autonomous Systems Design and Operation
+Competition, teams are expected to autonomously solve a logistics/transportation
+problem in a simulated post-disaster scenario, through the coordinated operation of an
+Unmanned Aerial Vehicle (UAV) and an Unmanned Ground Vehicle (UGV). The execution
+of the mission shall be carried out in accordance with the rules and workflow specified
+below.
+
+2.1. Competition Area and Operational Environment
+The defined zones specified below shall be established within the competition area by
+the technical teams.
+•
+•
+
+Target Detection Zone (TDZ): A 50 m × 50 m bounded area within the competition field.
+This zone contains debris piles and obstacles simulating a disaster environment.
+UAV Launch Zone (UAV-LZ): The area where the UAV catapult system will be installed
+and from which the UAV will be launched.
+
+7
+
+•
+
+•
+•
+•
+•
+
+UAV Operation Zone (UAV-OZ): The maximum flight area within the competition field
+in which the UAV is permitted to operate. This area is limited to dimensions of 300 m
+× 300 m.
+UGV Positioning Zone (UGV-PZ): The area where the ground vehicle takes its initial
+position. It is limited to dimensions of 1 m × 1 m.
+Target Zone (TZ): The destination point that the UGV is expected to reach within the
+target detection zone. It is a 2 m × 2 m area marked with a red “H” symbol.
+UAV Landing Zone (UAV-LZ): The designated safe area where the UAV will land via
+parachute after completing its mission. It is a 30 m × 30 m blue-colored zone.
+Routes: Within the TDZ, there are three (3) different paths formed between the UGVPZ and the TZ among the debris piles. On competition days, only one (1) of these three
+routes will remain open, while the other two will be physically blocked. The
+information regarding which route is open will not be shared with the participants in
+advance and will be kept confidential.
+
+Figure 1. Sample illustration of the competition area and operational environment (The image is
+entirely generated using artificial intelligence. It does not directly represent the actual field.)
+
+2.2. Mission Workflow
+For the mission to be considered successful, the system must execute the following steps
+sequentially and in compliance with the specified rules:
+
+2.2.1. Takeoff
+•
+
+•
+
+As specified in the technical requirements, all relevant systems must be transported
+to the competition area in sealed containers. The setup period shall commence
+following the opening of these seals under the supervision of the referees.
+The UAV shall be launched only from the designated UAV Launch Zone (UAV-LZ) using
+a catapult system.
+
+8
+
+•
+
+Hand launch, running takeoff from a runway, or vertical takeoff methods are
+prohibited; takeoff must be executed exclusively via the catapult system.
+
+2.2.2. Reconnaissance and Route Identification:
+•
+•
+
+After launch, the UAV shall switch to fully autonomous flight mode and operate
+within the UAV-OZ.
+Using its onboard sensors and image processing algorithms, the UAV shall identify the
+open route within the TDZ.
+
+2.2.3. Data Transmission:
+•
+•
+•
+•
+
+The UAV shall transmit the identified route information to the ground station and the
+UGV via wireless communication systems.
+The field referee at the ground station must confirm in real time that the route
+information has been successfully detected.
+The field referee at the ground station shall also confirm that the detected route
+information has been transmitted to the UGV.
+This transmission must be completed while the UAV is airborne.
+
+2.2.4 Landing
+•
+•
+•
+•
+
+After the route information has been transmitted to the UGV, the UAV shall initiate its
+landing procedure within the designated UAV-LZ.
+Landing must be performed using a parachute system.
+The parachute deployment command may be issued either autonomously by the
+system or manually triggered from the ground station as a safety precaution.
+If the parachute deployment system is triggered manually instead of autonomously, a
+deduction score shall be applied to the relevant team.
+
+2.2.5. Ground Operation
+•
+•
+•
+
+•
+•
+
+The UGV shall wait for the UAV to complete its landing before initiating movement. The
+UGV shall not move while the UAV is still in the air.
+Teams whose UGVs begin movement before the UAV has landed shall be deemed
+unsuccessful in the mission.
+Following the completion of the UAV landing operation, the UGV’s deployment
+process shall be manually triggered by a team member at the Ground Control Station
+(GCS).
+Based on the route information received from the UAV, the UGV shall autonomously
+navigate true the open route and proceed toward the TZ.
+Any UGV that does not operate autonomously shall be deemed unsuccessful in the
+mission.
+
+9
+
+2.2.6. Mission Completion
+•
+•
+•
+
+The mission shall be considered successfully completed when the UGV reaches
+within the boundaries of the TZ by following the route transmited by the UAV.
+Teams that fail to reach the TZ within the specified time limit shall be deemed
+unsuccessful in the mission.
+As defined in the technical requirements list, the UGV must transport the designated
+payload(s) to the target area. Upon arrival at the target point, the UGV must maintain
+its structural integrity and retain the payload(s) without any loss; otherwise, the
+mission shall be deemed unsuccessful.
+
+3. COMPETITION SCHEDULE
+The schedule prepared for the Advanced Autonomous Systems Design and Operation
+Competition is presented below.
+Table 1. Competition Schedule
+Description
+Competition Final Application Deadline
+Preliminary
+Review
+Report
+(PRR)
+Submission Deadline
+Announcement of Preliminary Review
+Report (PRR)Results
+Detailed Review Report (DRR) Submission
+Deadline
+Announcement of Detailed Review Report
+(DRR) Results
+Final Review Report (FRR) Submission
+Deadline
+Final Review Stage (Final Review
+Presentations (FRP) and Drone Mission
+Test Flight)
+Announcement of Final Review Report
+Results and Teams Eligible for Financial
+Support
+System Review Presentation Submission
+(SRPS) Deadline
+Announcement of SRPS
+Flight Readiness Review Report (FRRR)
+Submission Deadline
+Announcement of Flight Readiness
+Review Report (FRRR) Results
+Flight Tests
+Competition Date/Location
+
+Date
+10 April 2026
+26.04.2026 – 17.00
+04.05.2026
+15.07.2026 – 17.00
+29.07.2026
+21.09.2026 – 17.00
+30.09-03.10.2026
+04.10.2026
+05.02.2027 – 17.00
+19.02.2027
+16.04.2027 – 17.00
+30.04.2027
+21.05.2027
+August-September 2027
+
+10
+
+4. COMPETITION PARTICIPATION REQUIREMENTS
+•
+
+•
+•
+
+•
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+Applications to the Advanced Autonomous Systems Design and Operation
+Competition are open to all associate, undergraduate, and graduate students who are
+either Turkish citizens or foreign nationals studying in Türkiye or abroad.
+Teams may consist of students who are either citizens of the Republic of Türkiye or
+foreign nationals.
+Each team must consist of a minimum of six (6) and a maximum of ten (10) members,
+including the Team Captain. The number of members permitted to attend the
+competition site or the TEKNOFEST area may be limited by TUSAŞ and the jury panel.
+Teams will be informed in advance in case of any such capacity limitations.
+The proportion of graduate-level members within a team shall not exceed 20% of the
+total team size.
+A participant (student, team captain, or advisor) is not allowed to take part in more
+than one team within the same competition. In the event of a violation of this rule, all
+teams associated with the individual in question shall be disqualified from the
+competition.
+Each team is required to have one (1) Team Captain who holds student status at a
+university. The active student status of the designated Team Captain must be officially
+documented.
+The appointment of a mentor/advisor for competing teams is not mandatory and is left
+to the discretion of the participants. If appointed, each team may include a maximum
+of one (1) advisor. In the event that this limit is exceeded and more than one advisor is
+declared, the team’s application shall be deemed invalid due to non-compliance with
+the participation requirements.
+There are no national or international restrictions regarding team formation. Mixed
+teams consisting of members from multiple countries may either declare their
+country based on the country represented by the majority of members or choose one
+of the represented countries at their own discretion.
+As of the application date, all team members except the advisor must have active
+student status. Teams found to include members who do not meet this requirement
+shall be disqualified from the competition.
+Team members, excluding the advisor, are required not to be engaged in full-time
+employment within any institution or organization in the aerospace industry, even if
+their student status has terminated.
+Originality of the submitted ideas, projects, and systems is essential. Participants
+may not compete with duplicate or copied reports, ideas, or designs. Any work
+identified as plagiarism or similarity shall constitute grounds for disqualification.
+
+11
+
+•
+
+•
+
+•
+
+•
+•
+
+•
+
+•
+
+•
+•
+•
+
+•
+
+•
+•
+•
+
+Each project may be submitted to only one competition category or one competition
+track. If the same project is submitted to different categories within TEKNOFEST or to
+concurrently organized competitions, all applications of the relevant team or
+individuals shall be deemed invalid.
+The Team Captain is responsible for managing all operational processes, including the
+application process, preparation of reports, and uploading visual materials to the
+system, as well as coordinating and representing team members during both the
+preparation and competition phases.
+Following the Final Review Presentations specified in the competition schedule, no
+changes or updates to the team’s member composition shall be permitted. From this
+stage onward, team rosters shall be considered final.
+Participants may apply to the competition only after declaring that they have read and
+accepted all explanations and participation requirements.
+If a participant has previously competed in TEKNOFEST competitions with the same
+project, they may reapply for TEKNOFEST 2026 provided that the project/idea has
+been further developed and/or transformed.
+Participants may not compete with an exact copy or duplicate of a previously
+submitted project/report/idea. Projects identified as similar or plagiarized shall be
+disqualified.
+In cases where project reports from previous TEKNOFEST competitions published at
+www.teknofest.org are referenced, proper citation must be provided. The citation
+format can be found under the general rules section of the specification.
+Participants may apply to different TEKNOFEST competitions with different projects.
+When selecting a category, the participant’s current level of education at the time of
+application must be taken into account.
+If the participant has previously taken part in another competition (TEKNOFEST or
+otherwise) with the same project, they must declare the name, location, date,
+organizer, and result of that competition within the project documentation.
+Submitted ideas and documents are expected to be original and free from plagiarism.
+All submitted reports will be screened using plagiarism detection tools during the
+competition process.
+Consistent use of verb tenses (e.g., present tense, past tense, etc.) is required in
+application texts.
+Reports must not contain irrelevant, manipulative, or political statements unrelated
+to the subject of the project.
+In case of non-compliance with the rules or procedural violations, the
+team/participant shall be directly disqualified.
+
+12
+
+•
+•
+•
+•
+
+•
+
+Disqualified participants shall not have the right to appeal competition results or
+committee decisions.
+The TEKNOFEST Competitions Committee reserves the right to issue additional
+announcements or update the rules during the competition period.
+All participants are responsible for following announcements.
+Students are required to upload officially approved student certificates, and advisors
+must upload official documents verifying their place of employment, bearing wet
+signatures, to the system on the date to be announced by the TEKNOFEST
+Competitions Committee. (Document templates will be shared with participants.)
+Applications must be submitted online via the www.t3kys.comapplication system by
+April 10, 2026.
+
+4.1. Team Formation
+•
+•
+•
+•
+•
+•
+
+•
+•
+
+•
+
+Teams must consist of a minimum of 6 and a maximum of 10 members across all
+categories and education levels. (The advisor is not included in this count.)
+There is no mandatory requirement for teams to have an advisor.
+The advisor must not be registered as a team member. The advisor’s role within the
+team must be explicitly indicated as “advisor.”
+Each team may have a maximum of one advisor. Applications from teams with more
+than one advisor shall be deemed invalid.
+Teams may be formed by students from a single higher education institution or by
+students from multiple higher education institutions.
+Teams may be formed by students from a single country or by students from one or
+more countries. The team’s country information may be selected based on the
+country with the majority of its members, or the team may choose any of the
+represented countries at its own discretion.
+Each team must have a Team Captain.
+Throughout the competition process, the education level selected during the
+application phase will be taken into consideration when forming the team.
+Participants must ensure that their selected education level is accurate.
+During the application period, the Team Captain and/or advisor (if any) registers on the
+system, creates the team profile with complete and accurate information for all team
+members, and sends invitations to the members’ email addresses. Invited members
+must log into the application system, accept the invitation under the “My Team
+Information” section, and complete their registration. Otherwise, the registration
+process shall not be considered complete.
+
+13
+
+4.2. Advisor Responsibilities
+•
+
+•
+
+•
+
+•
+
+•
+
+The document confirming that the person assigned as an advisor will fulfill their
+advisory duties must be uploaded to the system with a wet signature on the date to be
+announced by the TEKNOFEST Competitions Committee
+Participants are not required to attend the final stage with their advisors. However, if a
+team advisor is included in the application, submission of the advisory commitment
+document is mandatory.
+The role of the advisor is to assist students in planning their own education, to guide
+them on academic, social, and cultural matters, and to help create an environment
+conducive to the holistic development of the student’s intellectual, social, and
+emotional aspects. The advisor’s role within the team is to provide academic support
+as needed and to guide team members in developing solutions to problems
+encountered in the project.
+Advisor eligibility: Individuals who are employed as teachers or academics in
+educational institutions, or professionals such as engineers/experts actively pursuing
+their careers in relevant fields, may serve as advisors within the team.
+The advisor commits to supporting the team until the final stage and to being present
+with the team throughout the final stage (except flight area/airfield) of the competition.
+
+4.3. Process Information
+•
+
+•
+
+•
+
+•
+
+•
+
+Throughout the competition process, all communications issued by the TEKNOFEST
+Competitions Committee shall be directed to the person designated as the team’s
+communication officer. Therefore, each team must appoint a communication officer.
+(Notifications are sent to the email address registered in the KYS system.)
+The tracking of all processes (application submission, report/presentation/form final
+upload deadlines, objection processes, required forms, etc.) is the responsibility of
+the communication officer. The TEKNOFEST Competitions Committee shall not be
+held responsible for any delays or issues arising from the communication officer.
+All necessary processes within the scope of the competition (application,
+report/presentation/form submissions, review results, financial support applications,
+objection procedures, member additions/removals, etc.) are conducted via the KYS
+system. Teams are required to monitor all processes through the KYS portal.
+During the competition process, application submission, report uploading, objection
+procedures, and form completion shall be carried out under the authority of the Team
+Captain and/or advisor, and all competition processes are managed through these
+individuals.
+Member additions and removals may be carried out until the Final Review Report
+submission deadline. No changes to team composition are allowed after report
+submission. The TEKNOFEST Competitions Committee may permit changes to team
+
+14
+
+•
+
+•
+
+•
+•
+
+members up to a specified date; after this date, no changes to the team structure shall
+be allowed.
+Travel and accommodation support provided to finalist teams is limited. The
+TEKNOFEST Competitions Committee reserves the right to change the number of
+supported participants. This limitation must be considered during team formation.
+The TEKNOFEST Competitions Committee reserves the right to limit the number of
+team members allowed at the festival area. In case of such limitation, teams will be
+informed by the committee.
+Participants who have completed team formation must apply to the appropriate
+competition category relevant to their project.
+Participants who complete the application process are required to prepare and
+upload their forms in full to the system by the Preliminary Design Report final
+submission deadline specified in the competition schedule, without being subject to
+any elimination process. Teams that fail to upload their reports within the specified
+timeframe shall be deemed eliminated at this stage.
+
+4.4. Application Principles
+Applications shall be submitted via the official TEKNOFEST Aviation, Space and
+Technology Festival Technology Competitions website www.teknofest.org.
+Applications must be completed online through the www.t3kys.com application system
+by April 10, 2026.
+Participants may apply to the competition only after reading and accepting all statements
+and participation requirements related to the competition.
+Applicants shall be deemed to have accepted all conditions set forth in this specification
+upon submission of their application.
+
+5. COMPETITION TECHNICAL PROJECT PROCESS
+5.1. Preliminary Review Report (PRR)
+The Preliminary Review Report (PRR) to be prepared for the Advanced Autonomous
+Systems and Operation Competition constitutes the first critical stage of the
+competition’s technical project process. The report consists of a total of eight (8) main
+sections, namely Summary, Organizational Structure, Project Schedule, Budget Analysis,
+Conceptual Design Approach, Benefit Analysis Studies, Production Plan, and System
+Integration and Test Plan. The sections and main headings included within the scope of
+the PRR are presented in Table 1.
+
+15
+
+Teams are required to present all preparation and conceptual processes in an analytical
+manner and in alignment with the success criteria specified in Table 1. This is a
+mandatory prerequisite for advancing to the next technical phase. The guideline
+document prepared for the Preliminary Review Report will be shared with participants
+who are eligible to proceed to the competition technical project process following the
+completion of the initial application intake and review process.
+
+Table 2. Preliminary Review Report (PRR) Assessment Criteria
+Chapter
+No
+Chapter 1
+Chapter 2
+Chapter 3
+Chapter 4
+Chapter 5
+Chapter 6
+Chapter 7
+Chapter 8
+
+Subject
+
+Score
+
+Summary
+Organizational Structure
+Project Schedule
+Budget Analysis
+Conceptual Design Approach
+Benefit Analysis Studies
+Production Plan
+System Integration and Test Plan
+
+10
+5
+5
+5
+30
+25
+10
+10
+
+5.2. Detailed Review Report (DRR)
+The second technical phase of the Advanced Autonomous Systems and Operations
+Competition is the Detailed Review Report (DRR). The DRR consists of five (5) main
+sections: Summary, Organizational Structure and Project Schedule, General System
+Specifications, Test Activities, and Requirements Traceability and Review. This report
+must provide detailed information regarding the UAV conceptual design and the actions
+taken within the scope of structural and hardware/software activities for the UAV-UGVCatapult systems. Any iterations conducted within this scope must be presented in
+detail. In addition, participants are expected to provide an analytical approach regarding
+the traceability and review of competition requirements.
+Table 3. Detailed Review Report (DRR) Assessment Criteria
+Chapter
+No
+Chapter 1
+Chapter 2
+Chapter 3
+Chapter 4
+Chapter 5
+
+Subject
+Summary
+Organizational Structure and Project
+Schedule
+General System Specifications
+Test Activities
+Requirements Traceability and Review
+
+16
+
+Score
+10
+10
+60
+10
+10
+
+Teams deemed successful according to the DRR results will be entitled to receive 25% of
+the total budget if they have applied for financial support. In this context, it is necessary
+to complete the financial support form, which will be submitted via the KYS system.
+The date for submitting the financial support form will be determined by the TEKNOFEST
+Competitions Committee, and the relevant team's communication representative will be
+notified.
+Note: Applying for financial support is not mandatory.
+
+5.3. Final Review Stage (FRS):
+This stage of the competition is a critical qualifying step where teams partially validate their
+theoretical designs and software architectures under field conditions. This stage consists of
+two sub-sections:
+
+5.3.1. Final Review Report (FRR)
+Final Review Report (FRR), is a technical document that shall be prepared to demonstrate
+that all detailed design processes of the relevant systems have been completed and that
+the system is ready to meet the specified mission requirements. Within the scope of the
+FRR, evidence shall be provided to verify that the requirements defined during the
+Preliminary Review Report (PRR) and Detailed Review Report (DRR) phases have been
+satisfied, that all necessary revisions have been implemented, that the design is
+manufacturable, and that system integration has been completed. All revisions made
+throughout the process shall be documented and presented within the FRR. Furthermore,
+in order to demonstrate that the system is capable of operating under actual mission
+conditions, the final mechanical, avionics, and software architectures, subsystem
+interactions, as well as manufacturing, assembly, and field deployment processes shall
+be described in detail. The sections, main headings, and review criteria defined within the
+scope of the FRR are provided in Table 3.
+Tablo 4. Final Review Report (FRR) Assessment Criteria
+Chapter
+Subject
+No
+Chapter 1 Summary
+Organizational Structure and Project
+Chapter 2
+Schedule
+Chapter 3 General System Specifications
+Chapter 4 Test Activities
+Chapter 5 Manufacturing Activities
+Chapter 6 Requirements Traceability and Review
+Chapter 7 Budget Performance Analysis
+
+17
+
+Score
+5
+5
+40
+15
+15
+10
+10
+
+5.3.2. Drone Mission Test Flight
+This phase is a mandatory flight phase in which the mission software and autonomy algorithms
+developed by the teams for the competition are tested under field conditions. Teams are
+required to perform this mission using a multirotor unmanned aerial vehicle (Drone) capable of
+vertical take-off and landing, integrated with their uniqe hardware and software architectures.
+The mission shall be conducted within a simulated 20×20 meter test area containing obstacles
+and debris structures. Within the scope of the mission, the drone is required to detect the “Open
+Path” that provides a safe transition between the designated “Start Zone” and “Target Zone” by
+flying at a minimum altitude of 30 meters. This detection shall be performed using aerial image
+processing and artificial intelligence algorithms, and the identified path shall be transmitted in
+real time to the Ground Control Station (GCS) during flight. In order for the mission test flight to
+be considered successful and for teams to receive the full score of 100 points, the real-time
+path detection must be verified and approved by the field referee, and the entire operation
+process (take-off, detection, data transmission, and landing) must be completed within a
+maximum of 10 minutes. Teams that fail to meet any of the specified criteria, exceed the time
+limit, or perform incorrect path detection shall receive a score of 0 and will be considered
+unsuccessful in the mission. The total score for the final review phase is calculated according
+to the following weighted average formula:
+Final Review Stage Total Score = (FRR * 0.85) + (Drone Mission Test Flight * 0.15)
+Based on the results of the Final Review Stage (FRS), teams that are deemed successful
+shall be entitled to receive 75% of the total budget, provided that they have submitted a
+financial support application. Within this scope, the financial support form to be
+submitted through the KYS system must be completed in full.
+The deadline for the financial support form shall be determined by the TEKNOFEST
+Competitions Committee, and the relevant information shall be communicated to the
+designated contact person of the respective team.
+Note: Submitting a financial support application is not mandatory.
+
+5.4. System Review Presentation (SRP):
+System Review Presentation is a mandatory presentation document to be prepared by
+teams for the purpose of verifiably validating the design/manufacturing/procurement
+maturity of the UAV, UGV, and Catapult systems developed within the scope of the
+competition. The BOM (Bill of Materials); which is the basis of the presentation, is the
+official materials list that includes all manufactured or purchased parts, subsystems, and
+consumables of the system (e.g., adhesives/binders), listing them with their names,
+quantities, and basic information. The presentation shall include, for each part and/or
+commercially procured system item included in the BOM, the manufacturing method,
+
+18
+
+manufacturing duration, CAD model mass, actual measured mass after manufacturing
+or delivery, any additional fixture/tool requirements for manufacturing, and any
+manufacturing difficulties encountered; for commercially procured subsystems,
+procurement status (received / ordered / no action taken yet) along with the mass and
+dimensional information of the purchased items shall also be reported. In this way, the
+entirety of the declared BOM shall be checked on a part/system basis, and progress
+tracking shall be standardized. No additional scoring shall be conducted after the
+presentation, and the evaluation shall be announced as “Successful / Unsuccessful.”
+
+5.5. Flight Readiness Review Report (FRRR):
+Within the scope of this report, competitors shall present in detail the final images,
+physical characteristics (such as dimensions, weight, etc.), and total budget analyses of
+the assembled UAV and UGV systems. Differences between the actual project schedule
+and the project schedule projected in the FRR shall be provided with detailed
+explanations. Any changes applied to the assembly and integration steps planned in the
+FRR shall be explained along with their justifications.
+Competitors shall also include, within the report, videos demonstrating the successful
+autonomous operations of the UAV, UGV, and catapult systems prior to the test flight. The
+algorithms and models to be used for mission execution shall be described in detail in
+their final forms within the report.
+Table 5. Flight Readiness Review Report (FRRR) Assessment Criteria
+Chapter
+Subject
+No
+Chapter 1 Summary
+Chapter 2 Project Schedule
+Budget Performance Analysis and
+Chapter 3
+Deviation
+Chapter 4 General System Specifications
+Chapter 5 Flight and Autonomous Operation Videos
+
+Score
+5
+5
+10
+40
+40
+
+6. COMPETITION IMPLEMENTATION PRINCIPLES
+•
+
+•
+
+•
+
+Within the scope of the Advanced Autonomous Systems Design and Operation
+Competition, it is mandatory that the aerial vehicle platforms to be developed are
+configured as fixed-wing unmanned aerial vehicles (UAVs).
+The term “system” used throughout all guideline documents collectively refers to
+Unmanned Aerial Vehicles (UAVs), Unmanned Ground Vehicles (UGVs), and launch
+(catapult) platforms in an integrated manner.
+It is essential that all design, sizing, and manufacturing processes of the systems
+submitted to the competition are carried out entirely by the competing teams. Teams
+
+19
+
+•
+
+•
+
+•
+
+•
+
+•
+•
+
+•
+
+•
+
+•
+
+•
+
+participating with commercially available off-the-shelf platforms or designs found to
+contain plagiarism/copying shall be disqualified from the competition.
+The maximum weight limit defined for aerial vehicles to be produced within the scope
+of the Advanced Autonomous Systems Competition is 25 kg, including operational
+payloads. Vehicles exceeding this limit shall be excluded from evaluation during the
+technical inspection phase.
+The maximum weight limit defined for ground vehicles to be produced within the
+scope of the Advanced Autonomous Systems Competition is 10 kg, excluding
+operational payloads. Vehicles exceeding this limit shall be excluded from evaluation
+during the technical inspection phase.
+The dimensions of the operational flight area and the field configuration shall be
+announced to all teams through official channels after the competition venue is
+determined.
+The relevant institution reserves the right to make changes, updates, or revisions to
+this specification and all related technical documents throughout the competition
+process in accordance with operational requirements, technical needs, or force
+majeure conditions. Any such changes shall become binding for all participating
+teams from the moment they are announced via the official website and
+communication channels of the competition.
+The competition shall last a total of 6 (six) days. This 6-day period shall be divided into
+3 (three) separate task periods, each consisting of two (2) consecutive days.
+Within the target detection area, there are 3 (three) different routes that provide
+passage between the UGV Positioning Zone (UGV-PZ) and the Target Zone (TZ). These
+routes are designed in three different difficulty categories: “Easy,” “Medium,” and
+“Hard.” Each route shall have a different difficulty coefficient in evaluation
+calculations.
+In each two-day period of the competition, only one (1) of these three routes shall be
+available for use, while the other two routes shall be completely closed with physical
+obstacles (barriers, debris simulations, etc.). Information regarding which route and
+difficulty level will be open on which competition days shall not be shared with
+competitors in advance and shall remain confidential.
+Due to the uncertainty of the open route, teams are required to use sensors and image
+processing technologies during the UAV’s autonomous flight to scan physical
+obstacles in the field and determine the accessible route for the UGV to proceed.
+Each competitor team shall have only one (1) flight attempt for each route made
+available (each 2-day period). Accordingly, teams shall have a total of three (3) flight
+attempts over the 6-day competition period.
+The flight attempts available to teams shall only be valid within the period of the
+currently open route. Any unused flight attempt within the designated period of a given
+route shall not be carried over to subsequent routes or other days under any
+
+20
+
+circumstances. Unused flight attempts shall be forfeited, and the team shall receive
+a score of zero (0) for the mission of that round.
+
+6.1. Before the Competition
+•
+
+•
+•
+
+•
+
+•
+
+•
+
+•
+
+Competitor teams are required to complete their on-site registration procedures on
+the first day of the event week. The Team Captain must be personally present during
+registration, and the registration procedures shall be carried out by the Team Captain
+at the Management Office. In the event that team members who are not present during
+the registration hours arrive at the field later, the Team Captain, together with the
+respective member, is obligated to apply to the Management Office to report the
+situation and update the final registration form.
+Teams that have completed on-site registration shall apply to the Technical Inspection
+Tent to obtain technical compliance approval.
+All teams that have completed the registration process are required to undergo the
+technical inspection process prior to proceeding to the flight phase. No team that has
+not completed the technical inspection phase shall be permitted to conduct flight
+operations.
+All decisions made by TUSAŞ officials and the jury panel during the technical
+inspection phase are final and binding. Participating teams are required to comply
+with these decisions unconditionally throughout the inspection process.
+It is essential that teams undergo technical inspection with the system configurations
+they have declared and committed to within the scope of the Final Evaluation
+Presentation, System Review Presentation, and Flight Readiness Assessment Report.
+Deviations from the reported technical specifications or participation with a different
+system shall be considered a violation of the rules.
+The storage cases of UAV and UGV systems that successfully pass technical
+inspection and receive “Flight Approved” status shall be sealed by the referees. Once
+sealed, any modification, disassembly, or part replacement in the mechanical or
+electronic structure of the systems prior to the mission is strictly prohibited for safety
+reasons.
+Teams whose storage cases are sealed following technical inspection shall not
+interfere with these seals until their assigned flight sequence. The opening of the seals
+shall be carried out at the flight area and immediately prior to the start of the
+preparation period, under the supervision of the jury panel.
+
+6.2. Competition Sequence
+•
+
+Competitive teams have the right to determine their flight order based on the ranking
+resulting from the Final Evaluation Presentations. The team that achieves the highest
+score in the evaluation will have priority in selecting its position in the flight schedule.
+
+21
+
+•
+
+•
+•
+
+•
+
+•
+
+•
+•
+•
+
+•
+•
+•
+
+•
+•
+•
+
+No objections regarding grouping or flight order will be accepted. The established
+schedule is final, binding for all teams, and cannot be altered in order to ensure
+uninterrupted competition operations.
+All equipment, tools, and materials required for the execution of tasks during the
+competition are the responsibility of the teams.
+The responsibility for ensuring that all systems and supporting infrastructure
+components to be used in operational processes are available on-site lies with the
+teams.
+In all possible risk scenarios, the jury has the authority to terminate the operation in
+order to maintain flight safety. In the event that the UAV sustains any damage or failure
+prior to or during flight, the system must undergo a comprehensive technical
+inspection. Platforms that do not receive technical compliance approval as a result of
+this inspection will not be permitted to continue flight operations under any
+circumstances.
+No appeal mechanism shall be operated for flight operations that are rejected or
+terminated on safety grounds. Administrative and technical decisions taken with a
+safety-oriented approach are binding for all participants; any applications made in
+this regard shall be deemed invalid.
+A maximum of eight (8) team members from each team are allowed to enter the
+competition area.
+Advisors (Academic Advisors or Mentor Teachers) are strictly prohibited from entering
+the flight area.
+After entering the competition area, teams are not permitted to communicate with
+their advisors outside the area by verbal, telephone, or any form of signaling. If
+detected, the team will be disqualified.
+All team members present in the area during flight are required to wear the provided
+helmets and vests.
+Teams enter the competition area upon the approval of the “Area Referee.” With this
+approval, the team’s 15-minute “Preparation Time” begins.
+During the preparation time, teams must complete the following: UAV assembly,
+placement of the catapult system inside the UAV launch zone (UAV-LZ), mounting of
+the UAV onto the catapult, placement of the unmanned ground vehicle (UGV) into the
+UGV positioning zone (UGV-PZ), and setup of the Ground Control Station.
+The team captain declares “Team Ready” to the referee upon completion of
+preparations, at which point the preparation time is stopped.
+After the “Team Ready” declaration, any physical intervention on the vehicles or the
+ground station by participants is prohibited.
+In case intervention on the systems is required due to a technical malfunction, the
+team captain may proceed by declaring to the referee that they accept a 100-point
+
+22
+
+•
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+penalty. The time spent for intervention is added to the team’s preparation time. If the
+total allotted time is exceeded, the flight right is revoked.
+After preparations are completed, “Flight Readiness” approval must be obtained from
+the Area Referees. No launch may be conducted without this approval.
+The flight time begins when the UAV separates from the catapult system (launch) and
+ends when route determination, data transmission, and parachute landing are
+completed. The maximum time allowed for these operations is 15 minutes.
+After launch via the catapult system, if the UAV fails to remain airborne and contacts
+the ground; provided that the Area Referee confirms that no incident or structural
+damage compromising flight safety has occurred, the team is granted a re-launch
+right.
+The time spent for the re-launch process (retrieving the vehicle, re-installing it on the
+catapult, and launching again) is not paused and is included within the total flight time
+(15 minutes). Teams must complete this process within their remaining task time. No
+launch may be performed once the time has expired.
+During re-setup, only catapult installation and system restart procedures are
+permitted. Comprehensive repairs or component replacement on the vehicle are
+strictly prohibited during this process.
+The open route detected by the UAV must be transmitted in real time to the Ground
+Control Station and monitored by the Area Referee via the screen. The referee must
+verbally confirm that the detection has been successful. Any detections not approved
+by the referee shall be deemed invalid.
+The UAV must conduct its flight within the defined UAV operational boundaries (UAVOB). Flights exceeding the UAV-OB limits shall be considered a “Boundary Violation,”
+and the flight will be deemed unsuccessful.
+The unmanned ground vehicle (UGV) may move toward the Target Zone (TZ) only after
+a successful UAV mission (i.e., transmission of route data and completion of the UAV’s
+landing), based on the data received from the UAV. The maximum time allowed for the
+UGV to reach the TZ is 10 minutes. If this time is exceeded, the UGV task will be
+considered unsuccessful.
+Both the UAV and the UGV must perform all processes—from launch/start to mission
+completion (including navigation, detection, data transmission, and driving)—fully
+autonomously.
+
+6.3. After the Competition
+•
+
+Upon completion of flight operations, all teams are obliged to promptly remove their
+systems and equipment from the flight area. Participants are responsible for the swift
+collection of equipment to ensure the field is prepared for the next flight.
+
+23
+
+•
+
+Any verbal or physical interference directed at TUSAŞ and TEKNOFEST officials, the
+jury panel, or support personnel on the competition field is strictly prohibited. If such
+disciplinary misconduct is detected, the team associated with the individual(s)
+involved may be subject to disqualification from the competition.
+
+6.4. Conditions for Flight to be Deemed Invalid
+Mission flights performed during the competition shall be deemed “Invalid,” and no points
+shall be awarded for the relevant flight round if any of the following conditions occur:
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+Time Exceedance: The UAV mission time begins when the UAV separates from the
+catapult system and ends upon completion of route determination, data
+transmission, and parachute landing. The maximum time allowed for these processes
+is 15 minutes. If this duration is exceeded, the flight shall be deemed invalid even if
+the mission is completed.
+Manual Intervention: If, at any stage of the flight (takeoff, cruise, or landing), the Safety
+Pilot intervenes and switches the UAV to manual mode due to safety concerns or a
+technical malfunction, the flight shall be considered unsuccessful.
+Referee Verification and Data Transmission: The route detected by the UAV must be
+transmitted in real time to the Ground Control Station. If the transmitted data cannot
+be verified by the Area Referee, or if data transmission is not maintained, the flight
+shall be deemed invalid.
+Boundary Violation: If the UAV exits the UAV operational boundaries (UAV-OB) defined
+by the competition committee, the flight shall be deemed unsuccessful in
+accordance with safety procedures.
+Crash and Structural Integrity: If the UAV sustains a crash, breaks apart, or loses its
+structural integrity at any stage of the flight or during landing (except for propeller
+breakage), the flight shall be deemed unsuccessful.
+Landing Violation: If, during the UAV’s landing within the designated UAV Landing Zone
+(UAV-LZ) after mission completion, the parachute system fails to deploy, resulting in a
+hard landing (uncontrolled descent), the flight shall be deemed invalid.
+
+7. REVIEW and SCORING
+All review and scoring activities to be conducted throughout the competition schedule
+shall be carried out based on the formulations presented below. Within this scope, a
+technical competency-based, multi-stage elimination mechanism has been established,
+encompassing the Preliminary Review Report (PRR), Detailed Review Report (DRR), and
+Final Review Stage (FRS) phases in their entirety.
+
+𝑆𝑐𝑜𝑟𝑒1 = 0.1 × 𝑃𝑅𝑅 + 0.25 × 𝐷𝑅𝑅 + 0.55 × 𝐹𝑅𝑆 + 0.1 × 𝐹𝑅𝑅𝑅
+
+24
+
+𝑆𝑐𝑜𝑟𝑒2 = 𝐶𝐝𝐢𝐟𝐟𝐢𝐜𝐮𝐥𝐭𝐲
+× [𝑆𝑚𝑖𝑠𝑠𝑖𝑜𝑛 +
++
+
+25000 − 𝑤𝑈𝐴𝑉 900 − 𝑑𝑈𝐴𝑉 900 − 𝑑𝐩𝐫𝐞𝐩𝐚𝐫𝐚𝐭𝐢𝐨𝐧
++
++
+10
+5
+30
+
+10000 − 𝑤𝑈𝐺𝑉
+600 − 𝑑𝑈𝐺𝑉
++ (𝑤𝐩𝐚𝐲𝐥𝐨𝐚𝐝 × 0.01) +
+− 𝐷𝐝𝐞𝐝𝐮𝐜𝐭𝐢𝐨𝐧 ]
+15
+15
+1.0
+𝐶𝐝𝐢𝐟𝐟𝐢𝐜𝐮𝐥𝐭𝐲 = {1.5
+2.0
+
+𝑆𝑐𝑒𝑛𝑎𝑟𝑖𝑜 1
+𝑆𝑐𝑒𝑛𝑎𝑟𝑖𝑜 2
+𝑆𝑐𝑒𝑛𝑎𝑟𝑖𝑜 3
+
+𝑆 = 𝑆𝑇𝐼 + 𝑆𝑓𝑙𝑖𝑔ℎ𝑡 + 𝑆𝑠𝑝𝑜𝑟𝑡𝑚𝑎𝑛𝑠ℎ𝑖𝑝
+𝑆𝑐𝑜𝑟𝑒 = 0.65 × 𝑆𝑐𝑜𝑟𝑒2 + 0.20 × 𝑆 + 0.15 × 𝑆𝑐𝑜𝑟𝑒1
+Table 6. Competition Review and Scoring Criteria
+Symbol
+
+Parameter Name
+
+𝑺𝒄𝒐𝒓𝒆𝟏
+
+Report
+Performance Score
+
+𝑷𝑹𝑹
+
+Preliminary Review
+Report Score
+
+𝑫𝑹𝑹
+𝑭𝑹𝑺
+𝑺𝒄𝒐𝒓𝒆𝟐
+𝑪𝐝𝐢𝐟𝐟𝐢𝐜𝐮𝐥𝐭𝐲
+
+Detail
+Review
+Report Score
+Final Review Stage
+Score
+Flight Performance
+Score
+Difficulty
+Coefficient
+
+𝒘𝑼𝑨𝑽
+
+UAV Weight Score
+
+𝒅𝑼𝑨𝑽
+
+UAV
+Mission
+Duration Score
+
+𝒅𝐩𝐫𝐞𝐩𝐚𝐫𝐚𝐭𝐢𝐨𝐧
+
+Preparation
+Duration Score
+
+Calculation Method / Description
+This is the score obtained by the competitors
+based on the reports they prepare and the
+presentations they deliver throughout the entire
+process.
+This is the score obtained by the team as a result
+of the evaluation of the Preliminary Review
+Report.
+This is the score obtained by the team as a result
+of the evaluation of the Detailed Review Report.
+This is the score obtained by the team as a result
+of the evaluation of the Final Review Stage.
+This is the score obtained by the competitors
+based on their mission flight performance.
+This is the coefficient that varies depending on
+the scenario in which the mission is carried out.
+1 point is awarded for every 10 grams below the
+25,000-gram limit of the UAV.
+1 point is awarded for every 5 seconds saved
+from the UAV’s maximum mission duration of
+900 seconds. The UAV’s mission time begins
+with its launch from the catapult and ends when
+it completes its parachute landing.
+1 point is awarded for every 30 seconds saved
+from the maximum setup time of 900 seconds.
+The setup time begins with the signal of the
+assigned referee and ends when the team
+
+25
+
+𝒘𝑼𝑮𝑽
+𝒘𝒑𝒂𝒚𝒍𝒐𝒂𝒅
+
+𝒅𝑼𝑮𝑽
+
+𝑺𝒎𝒊𝒔𝒔𝒊𝒐𝒏
+
+𝑺
+
+𝑺𝑻𝑰
+
+𝑺𝒇𝒍𝒊𝒈𝒉𝒕
+
+𝑺𝒔𝒑𝒐𝒓𝒕𝒎𝒂𝒏𝒔𝒉𝒊𝒑
+
+signals that they are ready (Hands-Off). After
+notifying the referee that they are ready, if teams
+need to intervene in their systems again, they
+may do so by accepting a penalty point, provided
+that the duration of such intervention is added to
+their preparation time.
+1 point is awarded for every 15 grams below the
+UGV Weight Score
+10,000-gram limit of the UGV.
+1 point is awarded for every 100 grams of total
+UGV Payload Score
+payload carried by the UGV.
+This is the total mission duration of the UGV. The
+maximum mission time of the UGV is 600
+seconds. The time begins when the UGV’s
+UGV
+Mission
+wheels start moving and ends when the UGV
+Duration Score
+physically contacts the tarp. The UGV is
+awarded 1 point for every 15 seconds saved
+below the 600-second limit.
+This is the score awarded if the UGV physically
+contacts the target tarp (Point H). In case of
+Mission Success
+success, 600 points are awarded; if
+unsuccessful, 0 points are awarded.
+Competitor
+Performance Score
+This is the score obtained if the team
+successfully
+completes
+all
+technical
+inspections. If the team passes the technical
+Technical
+inspection on the first attempt, 100 points are
+Inspection
+awarded; if on the second attempt, 50 points are
+Performance Score awarded; and if the team fails to pass the
+technical inspection, 0 points are awarded.
+Teams that do not pass the technical inspection
+are not allowed to perform a flight.
+This is the score obtained if the team performs a
+successful flight in accordance with the rules.
+For a successful flight, the UAV must not be
+Flight Performance damaged, must be able to detect the target, and
+Score
+must enable the UGV to move. The team is
+awarded 200 points for each scenario flight
+completed successfully; otherwise, 0 points are
+awarded.
+This is the score obtained based on the team’s
+Sportmanship
+teamwork and sportsmanship demonstrated
+Score
+throughout the competition. A maximum of 50
+points can be awarded.
+
+26
+
+𝑭𝑹𝑹𝑹
+
+𝑫𝑫𝒆𝒅𝒖𝒄𝒕𝒊𝒐𝒏
+
+This is the score obtained by the team as a result
+Flight
+Readiness
+of the review of the Flight Readiness Review
+Review Report
+Report.
+Landing Deviation: If the UAV lands outside the
+designated landing area, a penalty of -5 points
+will be applied for each meter of deviation from
+the area.
+Restart: If teams need to intervene in their
+Deduction Score
+systems after the hands-off stage during the
+preparation phase, a penalty of -100 points will
+be applied.
+Manual Parachute Triggering: If the UAV’s
+parachute system is activated manually during
+landing, a penalty of -50 points will be applied
+
+8. AWARDS
+The details of the awards to be presented to the teams ranking in the top three at the end
+of the competition are specified in Table 7.
+Table 7. Competition Awards
+Ranking
+
+Prize Amount
+
+1st Place
+
+750,000 TL
+
+Advisor
+50,000 TL
+
+2nd Place
+
+600,000 TL
+
+40,000 TL
+
+3rd Place
+
+500,000 TL
+
+30,000 TL
+
+8.1. TUSAŞ Special Award
+•
+
+•
+
+Members of the teams that rank in the top three (3) in the overall competition
+standings will be directly granted the right to participate in the summer internship
+program to be held at the TUSAŞ Ankara campus. This right shall be valid provided that
+the relevant students meet TUSAŞ’s existing internship eligibility criteria.
+In addition to the internship opportunity, if any additional awards are defined, scope
+and schedule of such awards will be announced to the participants at a later stage
+through official channels.
+
+9. ADMINISTRATIVE PROVISIONS
+•
+
+Throughout the competition schedule, all participating teams are obliged to
+continuously follow announcements published on the official website
+teknofest.org and notifications sent to the email addresses registered in the
+
+27
+
+•
+
+•
+
+•
+
+•
+
+application system. All information communicated through these channels shall be
+considered as official notification.
+TUSAŞ reserves the right to modify the provisions of the specifications and update
+clauses whenever deemed necessary. The most recent version of the specifications
+announced through official channels during the competition process shall prevail;
+previous versions shall be considered invalid.
+Situations such as insufficient or delayed funding, disruptions in customs
+procedures, and delays in logistics/cargo shipments—being foreseeable and
+preventable with prior precautions—shall not be accepted as valid excuses (force
+majeure) for failure to participate in the competition.
+It is essential that there is no first-degree familial relationship, direct benefit
+relationship, or any conflict of interest between the students applying to the
+competition and, if applicable, the team advisor. In accordance with ethical
+principles, if such situations that may compromise impartiality are detected, the
+relevant applications shall be rejected without evaluation.
+Any unethical, discourteous, or aggressive behavior exhibited by any member of the
+participating teams—towards TUSAŞ personnel, TEKNOFEST officials, members of
+the Advisory and Review Board (ARB), the jury panel, other teams, or field staff—
+whether in writing, verbally, physically, face-to-face, or via digital platforms at any
+stage of the competition (before, during, or after) is strictly prohibited. If such behavior
+is detected, the relevant team may be disqualified from the competition by TUSAŞ and
+TEKNOFEST and may be banned from all competitions for a period to be determined.
+
+10. CONTACT
+For questions regarding the competition, you may join the competition group from the
+“Advanced Autonomous Systems Design and Operation Competition” page on the
+TEKNOFEST website. It is the responsibility of the teams to actively follow this group, and
+at least one member from each team must join and track announcements, questions, and
+answers shared in the group. The TEKNOFEST Competitions Committee shall not be held
+responsible for any failure of teams to access up-to-date information due to not following
+the specified email/group communications.
+Questions related to the organizational aspects of the competition should be submitted
+via the email address iletisim@teknofest.org
+Submitting your questions through the correct channels mentioned above is important to
+ensure that they are addressed promptly.
+
+11. GENERAL RULES
+To access the General Rules booklet applicable to the competition, please click here.
+
+28
+
+12. ETHICAL RULES
+To access the Ethical Rules booklet applicable to the competition, please click here.
+
+Statement of Responsibility
+T3 Foundation and TEKNOFEST shall not be held responsible in any way for any injury or
+damage arising from any product submitted by the competitors or caused by the
+competitors themselves. T3 Foundation and the organizers are not responsible for any
+damages caused by the competitors to third parties. T3 Foundation and TEKNOFEST are
+not responsible for ensuring that teams develop and operate their systems in accordance
+with the laws of the Republic of Türkiye.
+Türkiye Technology Team Foundation reserves the right to make any changes to this
+specification.
+
+29
+
+30
+
+

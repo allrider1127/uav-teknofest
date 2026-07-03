@@ -1,0 +1,557 @@
+TASNİF DIŞI
+
+ADVANCED AUTONOMOUS SYSTEMS DESIGN
+AND OPERATION COMPETITION
+DETAILED EVALUATION REPORT
+PREPARATION INSTRUCTION
+TEAM NAME:
+TEAM ID:
+APPLICATION ID:
+2026
+
+1
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+CONTENTS
+VERSIONS ………………………………………………………………………………………………………………………
+
+4
+
+DEFINITIONS and ABBREVIATIONS …………………………………………………………………………………
+
+5
+
+Section 1. Summary……………………………………………………………………………………………………….
+
+7
+
+Section 2. Organizational Structure and Project Schedule ……………………………………………..
+
+8
+
+Section 2.1. Organizational Structure …………………………………………………………………………….
+
+8
+
+Section 2.2. Project Schedule …………………………………………………………………………………………
+
+8
+
+Section 3. General System Specifications………………………………………………………………………..
+
+8
+
+Section 3.1. Flight Sciences - UAV Conceptual Design Principle………………………………………
+
+8
+
+Section 3.1.1 Weight & Balance……………………………………………………………………………………..
+
+8
+
+Section 3.1.2 Mission Profile………………………………………………………………………………………….
+
+9
+
+Section 3.1.3 Constraint Diagram …………………………………………………………………………………..
+
+9
+
+Section 3.1.4 Wing Design ……………………………………………………………………………………………..
+
+9
+
+Section 3.1.5 Fuselage Design ………………………………………………………………………………………
+
+9
+
+Section 3.1.6 Tail Design………………………………………………………………………………………………… 10
+Section 3.1.7 Control Surface Design……………………………………………………………………………… 10
+Section 3.1.8 Aircraft Aerodynamic Characteristics ……………………………………………………….. 10
+Section 3.1.9 Aircraft Stability Characteristics………………………………………………………………… 10
+Section 3.1.10 Flight Envelope ……………………………………………………………………………………… 10
+Section 3.1.11 Performance Calculations………………………………………………………………………. 10
+Section 3.1.12 Load Calculations …………………………………………………………………………………… 10
+Section 3.2 Structural Design and Structural Analysis ……………………………………………………. 11
+Section 3.2.1 Unmanned Aerial Vehicle (UAV) ………………………………………………………………. 11
+Section 3.2.2 Unmanned Ground Vehicle (UGV) …………………………………………………………… 12
+Section 3.2.3 Catapult …………………………………………………………………………………………………… 13
+Section 3.3 Avionics & Software ……………………………………………………………………………………. 14
+Section 3.3.1 System Architecture and Mission Flow Diagrams …………………………………….. 14
+Section 3.3.2 Hardware Selection and Comparative Analysis ………………………………………… 14
+Section 3.3.3 Electrical Design and Wiring ……………………………………………………………………. 15
+Section 3.3.4 Power System Analysis and Battery Calculations ……………………………………… 15
+2
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+Section 3.3.5 Software Architecture and Image Processing …………………………………………… 15
+Section 4. Test Activities ……………………………………………………………………………………………….. 15
+Section 5. Requirement Traceability and Evaluation ……………………………………………………… 16
+
+3
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+VERSIONS
+Table. Versions
+
+DATE
+
+DATE
+
+DESCRIPTION
+
+V1
+
+14.05.2026
+
+TEKNOFEST 2026 First
+Version
+
+4
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+DEFINITIONS and ABBREVIATIONS
+The abbreviations used within the scope of this specification and their corresponding
+definitions are provided in this section.
+ARB: Advisory and Review Board
+UAV: Unmanned Aerial Vehicle
+UGV: Unmanned Ground Vehicle
+TDZ: Target Detection Zone
+UAV-LZ: UAV Launch Zone
+UAV-OZ: UAV Operation Zone
+UGV-PZ: UGV Positioning Zone
+TZ: Target Zone
+UAV-LZ: UAV Landing Zone
+PRR: Preliminary Review Report
+DRR: Detailed Review Report
+FRR: Final Review Report
+FRS: Final Review Stage
+FRP: Final Review Presentation
+SRP: System Review Presentation
+FRRR: Flight Readiness Review Report
+Cdifficulty: Difficulty Coefficient
+wUAV: UAV Weight Score
+dUAV: UAV Mission Duration Score
+dpreparation: Preparation Duration Score
+wUGV: UGV Weight Score
+wpayload: UGV Payload Score
+dUGV: UGV Mission Duration Score
+Smission: Mission Success
+S: Competitor Performance Score
+
+5
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+STI: Technical Inspection Performance Score
+Sflight: Flight Performance Score
+Ssportmanship: Sportsmanship Score
+Ddeduction: Deduction Score
+
+6
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+INTERNATIONAL ADVANCED AUTONOMOUS SYSTEMS DESIGN
+AND OPERATION COMPETITION DETAILED EVALUATION
+REPORT PREPARATION GUIDELINE
+This guide serves as a guide for the Detailed Evaluation Report (DDR) that teams applying to
+the Advanced Autonomous Systems Design and Operation Competition are obliged to prepare.
+It is expected that this report, which is the second milestone of the competition schedule, will
+be prepared with utmost diligence based on the guidelines and technical criteria presented under
+the
+
+relevant
+
+topic
+
+headings.
+
+The Detailed Evaluation Report (DDR) will be evaluated according to the table given below in
+line with the criteria determined by a board possessing technical competence. Successfully
+completing this stage constitutes a prerequisite for proceeding to the next technical phase.
+Table 1. Detailed Evaluation Report Evaluation Scores
+Section No
+
+Section Name
+
+Points
+
+Section 1
+
+Summary
+
+10
+
+Section 2
+
+Organizational Structure and Project Schedule
+
+10
+
+Section 3
+
+General System Specifications
+
+60
+
+Section 4
+
+Test Activities
+
+10
+
+Section 5
+
+Requirements Traceability and Evaluation
+
+10
+
+Section 1. Summary (10 POINTS)
+Within the scope of this report, a systematic and holistic summary defining the technical
+outlines and operational capability of the project is required to be provided. The preliminary
+design activities and original system architectures carried out by taking into consideration the
+project requirements of the UAV, UGV, and Catapult systems should be defined. By evaluating
+the configurations belonging to the systems with appropriate evaluation metrics, their technical
+compatibility with mission scenarios, their endurance under boundary conditions, and the
+mission flexibility they provide against variable operational conditions should be analyzed, and
+accordingly, which of the configurations stands out should be defined together with its
+justifications. Finally, how each of the systems is integrated into the mission definitions within
+the scope of the competition and the contribution of these systems to operational success should
+be summarized.
+
+7
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+Section 2. Organizational Structure and Project Schedule (10 POINTS)
+In order to clarify the institutional functioning and implementation phases of the program, this
+section examines the organizational hierarchy in which roles are defined and the project
+schedule covering the stages of the design cycle. These two fundamental elements, which
+ensure that the engineering cycle progresses in a systematic order, are presented in detail under
+two separate headings below.
+Section 2.1. Organizational Structure; The current organizational structure of the team and
+the execution authorities of the members/units should be schematized in this section. In
+accordance with the objective evaluation criteria of the report, a role-based and professional
+description that is completely free of personal data of the members (name, image, etc.) should
+be preferred.
+Section 2.2. Project Schedule; Within the scope of this section, compliance with the schedule
+plan included in the project schedule previously prepared in the Preliminary Evaluation Report
+should be confirmed, and if there are new workflows added to the work schedule, the planning
+should be re-evaluated and updated with an analytical approach.
+Section 3. General System Specifications (60 POINTS)
+In this section, the system specifications defined for the main system and subsystems to be
+developed within the scope of the competition must be presented in a comprehensive manner.
+The aforementioned specifications will be examined within the axes of Flight Sciences,
+Structural Design and Analysis, and Avionics-Software disciplines, and the system’s holistic
+architecture will be addressed under three main headings.
+Section 3.1. Flight Sciences - UAV Conceptual Design Principles: Under this subsection, the
+technical specifications of the unmanned aerial vehicle to be designed, including weightbalance data, operational mission profile, aerodynamic structural design processes, stability
+analyses, and flight performance parameters, shall be addressed in a comprehensive manner.
+Section 3.1.1 Weight & Balance: In this section, the weight and balance calculations of the
+unmanned aerial vehicle designed must be explained in all details under the following three
+headings at the required level of detail.
+
+8
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+Weight Estimations: The methods followed in estimating the aircraft weight, the
+statistical data or empirical formulas used, and the reference points must be explained
+together with their bases. Any assumptions made and safety margins, if any, must be
+presented with justification.
+Weight and Balance Tables: A detailed component-based mass breakdown table must
+be created. The location of the center of gravity (CG) on the aircraft must be visualized.
+Any assumptions or estimations made, if any, must be explained together with their
+bases.
+Final Moment of Inertia Values: The moment of inertia values that will serve as input
+to dynamic stability analyses must be presented together with the calculation methods.
+Any assumptions or estimations made, if any, must be explained together with their
+bases.
+Section 3.1.2 Mission Profile: The execution of the task defined within the framework of the
+competition rules shall be divided into flight phases, and the mission profile of the aircraft shall
+be formed and explained in detail.
+Section 3.1.3 Constraint Diagram: The constraint diagram of the designed aircraft must be
+explained and presented in full detail. The methodology followed while creating the constraint
+diagram must be explained comprehensively. Finally, the selected design point from the
+constraint diagram must be determined, and the selected values of wing loading (W/S), power
+loading (W/P), and power-to-weight ratio (P/W) must be presented together with their
+justification.
+Section 3.1.4 Wing Design: Under this heading, the methodology followed in wing design
+must be explained in full detail. All equations used or derived in the application of the
+methodology must be provided. Input parameters used in the design must be presented together
+with their estimated bases. The selected airfoil, wing placement, chord lengths, wingspan, and
+all other parameters of the wing must be specified.
+Section 3.1.5 Fuselage Design: The methodology followed in the fuselage design of the aircraft
+must be explained in full detail. All equations used or derived in the application of the
+methodology must be provided. Input parameters used in the design must be presented together
+
+9
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+with their estimated bases. All parameters such as fuselage diameter, length, etc., must be
+specified.
+Section 3.1.6 Tail Design: The methodology followed in the tail design of the aircraft must be
+explained in full detail. All equations used or derived in the application of the methodology
+must be provided. Input parameters used in the design must be presented together with their
+estimated bases. All parameters such as the airfoil profiles selected for the tail unit, tail
+configuration, chord lengths, wingspans, etc., must be specified.
+Section 3.1.7 Control Surface Design: The methodology followed in the control surface
+design of the aircraft must be explained in full detail. All equations used or derived in the
+application of the methodology must be provided. Input parameters used in the design must be
+presented together with their estimated bases. The maximum deflection angles of the obtained
+control surfaces and all dimensional parameters must be specified.
+Section 3.1.8 Aircraft Aerodynamic Characteristics: The aerodynamic characteristics of the
+relevant aircraft must be explained in full detail. The analysis tools used (CFD, semi-empirical
+formulas, panel methods, etc.) and the reliability of these tools (mesh independence, validation
+studies, etc.) must be expressed in a technical manner. The obtained aerodynamic parameters
+of the aircraft must be presented through tables and graphs.
+Section 3.1.9 Aircraft Stability Characteristics: The static and dynamic stability
+characteristics of the designed aircraft must be explained in full detail. The methods and tools
+used in the stability analyses of the aircraft (if any) must be presented comprehensively.
+Section 3.1.10 Flight Envelope: The flight envelope of the aircraft must be drawn in
+accordance with the constraints specified in the requirements, including gust lines. The gust
+equations from CS-VLA must be used.
+Section 3.1.11 Performance Calculations: The performance calculations for the aircraft must
+be explained in full detail. The methods (analytical or numerical) and tools (if any) used in the
+performance calculations must be presented comprehensively.
+Section 3.1.12 Load Calculations: The load calculations to be performed for the designed
+aircraft must be explained in full detail. The CS-VLA document must be used in determining
+
+10
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+the load cases/conditions of the aircraft. The methods and tools used in the aircraft load
+calculations (if any) must be presented in a comprehensive manner.
+Section 3.2 Structural Design and Structural Analysis
+In this section, the structural design parameters of the Unmanned Aerial Vehicle (UAV),
+Unmanned Ground Vehicle (UGV), and catapult systems to be developed within the scope of
+the competition, as well as the structural analysis studies conducted to verify these designs,
+must be explained in a manner that satisfies the defined technical requirements.
+Section 3.2.1 Unmanned Aerial Vehicle (UAV): Under this heading, the technical
+specifications of the platform must be addressed in terms of structural design and structural
+analysis in a complementary manner. Structural requirements from the provided requirements
+list should be used as a basis, and if necessary, new requirements may be derived; all
+requirements defined for this stage must be satisfied. Requirement traceability must be
+considered, and appropriate verification methods (analysis, test, inspection, similarity, etc.)
+must be defined.
+Within the scope of Structural Design processes:
+• The master geometry must be fully designed,
+• Preliminary design of all components must be completed,
+• Control surfaces must be added,
+• Necessary interfaces for motor integration must be defined,
+• Placement of all systems within the aircraft must be completed,
+• A detailed mass distribution table for the current stage of the aircraft must be prepared,
+• The center of gravity location (x, y, z coordinates) must be shown using three-dimensional
+data,
+• All fasteners planned to be used in the aircraft must be defined,
+• The assembly sequence of the aircraft must be explained within the concept of modularity,
+• A part numbering and revision system must be established,
+• A Bill of Materials (BOM) must be prepared.
+Within the scope of structural analysis processes:
+• All calculations to be performed within structural analysis must be demonstrated either
+through basic (hand calculations) or finite element method approaches,
+11
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+• All analyses must be conducted under maximum load conditions,
+• A table including the strength-to-weight ratio for different materials that can be used in
+aircraft design must be prepared,
+• Static analyses of the fuselage, wing, and tail components of the aircraft must be performed;
+all avionics equipment within these components must be defined as point loads,
+• A comparative modal mass participation table must be presented for all aircraft components,
+• Buckling analysis results must be presented separately as eigenvalue tables, including both
+positive and negative results,
+• Buckling eigenvalues must be calculated under the effect of gravitational acceleration,
+• Analysis of hinge connections for control surfaces on the aircraft must be performed,
+• Calculations for the required torque to be provided by servo motors, if any, on the aircraft
+must be performed,
+• All materials and material models used in finite element models must be presented in detail,
+• All constraints and properties of the mesh structure created in finite element models must be
+presented in tabular form.
+Section 3.2.2 Unmanned Ground Vehicle (UGV): Under this heading, the technical
+specifications of the UGV must be addressed in terms of structural design and structural
+analysis in a complementary manner. Structural requirements from the provided requirements
+list should be used as a basis, and if necessary, new requirements may be derived; all
+requirements defined for this stage must be satisfied. Requirement traceability must be
+considered, and appropriate verification methods (analysis, test, inspection, similarity, etc.)
+must be defined.
+•
+
+If the UGV is to be designed by the participants:
+o The master geometry must be fully designed,
+o The preliminary design of all parts of the UGV must be completed, necessary
+connections must be defined, and the placement of all systems must be carried out,
+o A detailed mass distribution table for the current stage of the UGV must be
+prepared,
+o The center of gravity location (x, y, z coordinates) must be shown using threedimensional data,
+o All fasteners on the UGV must be identified; fastener types, materials, and locking
+methods must be defined,
+12
+
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+o A part numbering and revision system must be established and a Bill of Materials
+(BOM) must be prepared.
+•
+
+If the UGV is to be procured as a ready-made platform:
+o The BOM list of the subsystem must be provided,
+o All modifications to be performed on the vehicle must be described in detail,
+o Every part to be replaced must be specified,
+o If any additional designed components exist, their preliminary design must be
+completed,
+o Necessary connections must be defined and the placement of all systems must be
+carried out.
+
+Section 3.2.3 Catapult: Under this heading, the technical specifications of the catapult
+subsystem must be addressed in terms of structural design and structural analysis in a
+complementary manner. Structural requirements from the provided requirements list should be
+used as a basis, and if necessary, new requirements may be derived; all requirements defined
+for this stage must be satisfied. Requirement traceability must be considered, and appropriate
+verification methods (analysis, test, inspection, similarity, etc.) must be defined.
+•
+
+If the catapult is to be designed by the participants:
+o The preliminary design of all components of the subsystem must be completed,
+necessary connections must be defined, and the placement of all systems must be
+carried out,
+o A detailed mass distribution table must be prepared,
+o The center of gravity location (x, y, z coordinates) must be shown using threedimensional data,
+o All fasteners on the catapult must be identified; fastener types, materials, and
+locking methods must be defined,
+o A part numbering and revision system must be established and a Bill of Materials
+(BOM) must be prepared.
+
+•
+
+If the catapult is to be procured as a ready-made system:
+o The BOM list of the subsystem must be provided,
+o All modifications to be performed on the vehicle must be described in detail,
+o Every part to be replaced must be specified,
+o If any additional designed components exist, their preliminary design must be
+13
+
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+completed,
+o Necessary connections must be defined and the placement of all systems must be
+carried out.
+• For both cases, the catapult used for launch is expected to maintain its structural integrity after
+firing.
+• For both cases, if a spring system is used in the launch mechanism, the spring constant used
+within the system must be provided.
+Structural analysis processes must be considered for the production of the catapult subsystem
+by the participants within the scope of competition requirements. In this context:
+• The range at which the catapult mechanism can launch the UAV must be explained using
+energy equations and illustrated with a schematic diagram.
+Section 3.3 Avionics & Software
+In this section, the system architecture, mission flowcharts, hardware selection, wiring
+activities, EMI/EMC measures, power systems, and battery calculations of the Unmanned
+Aerial Vehicle (UAV) and Unmanned Ground Vehicle (UGV) systems to be developed within
+the scope of the competition, as well as the details of the planned software activities, must be
+included.
+Section 3.3.1 System Architecture and Mission Flowcharts: For both the UAV and UGV
+separately, detailed and readable connection diagrams must be provided, showing how all
+electronic components are interconnected and distinguishing signal lines (PWM, UART, I2C,
+etc.) and power lines using color coding. In addition, detailed mission flowcharts for both the
+UAV and UGV must be provided. Finally, logic diagrams of fail-safe scenarios created in
+accordance with the requirements must be presented within this section.
+Section 3.3.2 Hardware Selection and Comparative Analysis: The selection process of all
+avionics components used in the UAV and UGV platforms must be presented in detail, based
+on comparative analyses with market alternatives, along with technical justifications and
+performance advantages of the selected products. In addition, comprehensive Bills of Materials
+(BOM) for UAV and UGV platforms must be presented separately in table format, including
+the name, brand/model information, quantity, unit and total weight, physical dimensions, and
+estimated cost of all electronic components.
+14
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+Section 3.3.3 Electrical Design and Cabling: The selection of cable cross-sections (AWG)
+based on current-carrying capacity must be demonstrated with calculations. Connector types
+(XT60, Molex, JST, etc.) selected considering vibration and environmental factors, as well as
+locking mechanisms, must be specified. Cable weight calculations must be performed, and their
+effect on the total weight budget must be shown. In addition, EMI/EMC design measures taken
+to prevent electromagnetic interference must be explained.
+Section 3.3.4 Power System Analysis and Battery Calculations: For both UAV and UGV
+separately, a power consumption table including the average and peak current values of all
+consumer components in the system must be created. In addition, battery capacity (mAh)
+calculation methods must be provided in detail, considering mission duration (flight/driving
+time) and safety margins. The suitability of the battery discharge rate (C rating) must be
+mathematically demonstrated based on the instantaneous maximum current drawn from the
+system.
+Section 3.3.5 Software Architecture and Image Processing: This section may be examined
+under three subheadings:
+Software Infrastructure: The programming languages (Python, C++, etc.), libraries (OpenCV,
+ROS, TensorFlow, etc.), and operating systems selected for autonomous systems on the UAV
+and UGV must be explained together with the reasons for selection and their advantages.
+Image Processing Algorithm: The working principle of the image processing or artificial
+intelligence (AI/ML) model used by the UAV for route detection, including dataset preparation,
+training process, and performance metrics, must be explained and supported with block
+diagrams.
+Communication Protocol: The data communication architecture between the UAV and UGV
+platforms, and the protocols implemented to ensure data integrity and security, must be
+explained in technical detail.
+Section 4. Test Activities (10 POINTS)
+In this section, teams are expected to demonstrate the applicability of the conceptual designs
+submitted in the preliminary evaluation phase by detailing them further, and to present the
+testing and verification processes carried out for the system and subsystems. The purpose,
+15
+TASNİF DIŞI
+
+TASNİF DIŞI
+
+implementation method, success criteria, and relationship with system requirements of each test
+and verification activity must be clearly defined. The content presented under this heading is
+expected to technically validate the operational capability, reliability, and mission requirement
+compliance of the developed system. Teams are required to explain test plans, test procedures,
+and verification methodologies demonstrating that the system meets mission requirements.
+Acceptance tests performed on system components, integration processes, verification
+activities, and evaluation methods for test results must be detailed. Visuals and results of
+conducted acceptance tests must be provided. The schedule for future acceptance tests must
+also be included. In addition, ground tests that have been carried out must be presented with
+visuals and results, and the schedule for future ground tests must be provided.
+Section 5. Requirement Traceability and Evaluation (10 POINTS)
+In this section, teams are expected to systematically present how the requirements listed in the
+competition requirement set have been addressed throughout the system development process,
+to what extent they have been fulfilled, and by which verification methods they are managed.
+Teams must present the distribution of satisfied, under-verification, and unfulfilled
+requirements using technical data, clearly specify the verification method used for each
+requirement, and support this information with visual tools such as tables, traceability matrices,
+graphs, or pie charts. Teams are required to base their verification approach on the Means of
+Compliance (MoC) methodology. Accordingly, the verification method for each requirement
+(analysis, test, inspection, demonstration, etc.) must be defined, and the relationship between
+verification activities and system requirements must be clearly shown. For unmet requirements,
+the planned verification method, completion approach, and targeted verification process must
+be specified. The content under this section is expected to demonstrate that teams address
+requirements management, traceability, and verification processes using a systems engineering
+approach.
+
+16
+TASNİF DIŞI
+
+
