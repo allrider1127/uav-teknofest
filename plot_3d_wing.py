@@ -8,15 +8,15 @@ import aerosandbox as asb
 def main():
     print("====================================================")
     # 1. Geometry Setup (Optimized Values)
-    S = 0.916
-    ar = 6.85
-    b = np.sqrt(ar * S) # 2.50m
-    taper = 0.768
-    washout = 2.49      # degrees
+    S = 0.5795
+    ar = 6.23
+    b = 1.90            # 1.90m
+    taper = 0.605
+    washout = 2.50      # degrees
     dihedral = 4.2      # degrees
     
-    c_root = 2 * S / (b * (1 + taper)) # 0.414m
-    c_tip = c_root * taper             # 0.318m
+    c_root = 0.38                      # 0.38m
+    c_tip = 0.23                       # 0.23m
     
     airfoil_path = "/home/karahanli/Engineering/uav-teknofest/optimized_SD7062_perfect.dat"
     if not os.path.exists(airfoil_path):

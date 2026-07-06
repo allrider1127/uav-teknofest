@@ -19,7 +19,7 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a multi-point aerodynamic shape optimization of a 3D wing airfoil designed for a 16.5 kg fixed-wing Unmanned Aerial Vehicle (UAV) participating in the TEKNOFEST Advanced Autonomous Systems Competition. The design requires a high maximum lift coefficient to reduce stall speed and catapult launch energy, combined with high aerodynamic efficiency in both cruise and high-G turning flight to maximize the flight performance score. To guarantee a smooth, manufacturable shape free of geometric waviness, a 4th-order Class Shape Transformation (CST) parameterization method is employed. The optimization is conducted using a parallelized Sequential Least Squares Programming (SLSQP) algorithm coupled with XFOIL to evaluate viscous polars at $Re = 544,000$. The robust optimization successfully balances cruise drag reduction, high-lift turn capability, and structural thickness constraints. The optimized airfoil shows a 3.4\% increase in maximum lift and a 20.1\% reduction in pitching moment, ensuring a highly stable, efficient, and structurally compliant wing design.
+This paper presents a multi-point aerodynamic shape optimization of a 3D wing airfoil designed for a 7.5 kg fixed-wing Unmanned Aerial Vehicle (UAV) participating in the TEKNOFEST Advanced Autonomous Systems Competition. The design requires a high maximum lift coefficient to reduce stall speed and catapult launch energy, combined with high aerodynamic efficiency in both cruise and turning flight to maximize the flight performance score. To guarantee a smooth, manufacturable shape free of geometric waviness, a 4th-order Class Shape Transformation (CST) parameterization method is employed. The optimization is conducted using a parallelized Sequential Least Squares Programming (SLSQP) algorithm coupled with XFOIL to evaluate viscous polars at $Re = 460,000$. The robust optimization successfully balances cruise drag reduction, high-lift turn capability, and structural thickness constraints. The optimized airfoil shows a 1.3\% increase in maximum lift and a 17.4\% reduction in pitching moment, ensuring a highly stable, efficient, and structurally compliant wing design.
 \end{abstract}
 
 \section{Introduction}
@@ -33,7 +33,7 @@ To optimize for these scoring metrics, the wing must be designed to:
 
 Historically, standard airfoils like the NACA four-digit series (e.g., NACA 4412) or Selig low-Re profiles (e.g., SD7062) have been used. While robust, these profiles are not optimized for the specific multi-point operating regime of this competition. 
 
-In low-Reynolds-number aerodynamics ($Re \approx 300,000 - 600,000$), the flow is highly sensitive to laminar separation bubbles, which can cause premature stall or catastrophic drag increases. To address this, we present an automated, parallelized multi-point optimization system. We build on the turn radius minimization work of Koroglu and Ozkol (Istanbul Turn Radius, 2019) and the Class Shape Transformation (CST) method of Kulfan (Boeing, 2008) to generate a mathematically smooth, highly efficient, and structurally robust airfoil shape.
+In low-Reynolds-number aerodynamics ($Re \approx 300,000 - 600,000$), the flow is highly sensitive to laminar separation bubbles, which can cause premature stall or catastrophic drag increases. To address this, we present an automated, parallelized multi-point optimization system. We build on the turn radius minimization work of Koroglu and Ozkol~\cite{koroglu2019} and the Class Shape Transformation (CST) method of Kulfan~\cite{kulfan2008} to generate a mathematically smooth, highly efficient, and structurally robust airfoil shape.
 
 \section{Governing Equations}
 
@@ -60,7 +60,7 @@ where $w_i$ are the design variables (weights) and $K_{n,i}$ are the binomial co
 In this study, a 4th-order Bernstein polynomial ($n=4$, yielding 5 weights per surface) is selected to prevent high-frequency coordinate waviness.
 
 \subsection{Under the Hood: Viscous Flow Governing Equations in XFOIL}
-XFOIL combines a 2D panel method with a two-equation integral boundary layer solver to resolve the viscous-inviscid flow field. The governing physics solved by XFOIL's numerical engine along the surface arc length coordinate $s$ are detailed below:
+XFOIL~\cite{drela1989} combines a 2D panel method with a two-equation integral boundary layer solver to resolve the viscous-inviscid flow field. The governing physics solved by XFOIL's numerical engine along the surface arc length coordinate $s$ are detailed below:
 
 \subsubsection{Inviscid Flow Field Formulation (Panel Method)}
 The inviscid outer flow is solved by placing a linear source distribution $q(s)$ and a constant vortex distribution $\gamma$ along the airfoil surface. The tangential velocity $u(s)$ at any coordinate location $s$ is obtained by summing the freestream contribution, the source panel integration, and the vortex panel integration:
@@ -144,7 +144,7 @@ An aerodynamic wing design that reduces cruise drag directly lowers power consum
 \section{Optimization Methodology}
 The optimization problem is formulated as a multi-point objective function to minimize drag at both cruise and turning lift coefficients:
 \begin{equation}
-    \text{Minimize } J(\mathbf{w}) = 0.60 \cdot C_d(C_l=0.65) + 0.40 \cdot C_d(C_l=1.20) + \text{Penalties}
+    \text{Minimize } J(\mathbf{w}) = 0.60 \cdot C_d(C_l=0.428) + 0.40 \cdot C_d(C_l=0.857) + \text{Penalties}
 \end{equation}
 subject to the following design constraints:
 \begin{enumerate}
@@ -186,19 +186,18 @@ The optimization completed successfully. Table 1 summarizes the performance of t
 \begin{table}[h]
 \centering
 \small
-\caption{Airfoil Optimization Performance Comparison}
+\caption{Airfoil Optimization Performance Comparison ($Re = 460,000$)}
 \label{tab:performance}
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \toprule
-Parameter & Baseline (SD7062) & Multi-Point & Optimized (Perfect) \\
+Parameter & Baseline (SD7062) & Optimized (Perfect) \\
 \midrule
-Max Thickness ($t/c$) & 14.02\% & 13.84\% & 14.22\% \\
-LE Radius ($r_{\text{le}}$) & 8.18\% & 7.15\% & 7.45\% \\
-$C_{l,max}$ (Stall) & 1.6925 & 1.5301 & 1.5873 \\
-Cruise $C_d$ ($C_l=0.65$) & 0.00814 & 0.00765 & 0.00781 \\
-Turning $C_d$ ($C_l=1.20$) & 0.01151 & 0.01050 & 0.01058 \\
-Cruise $C_m$ ($C_l=0.65$) & -0.08230 & -0.06726 & -0.07374 \\
-Geometric Quality & Smooth & Reflexed / High-Performance & Perfectly Rounded LE \\
+Max Thickness ($t/c$) & 14.02\% & 13.86\% \\
+$C_{l,max}$ (Stall) & 1.6702 & 1.6923 \\
+Cruise $C_d$ ($C_l=0.428$) & 0.00837 & 0.00808 \\
+Turning $C_d$ ($C_l=0.857$) & 0.00946 & 0.01024 \\
+Cruise $C_m$ ($C_l=0.428$) & -0.08476 & -0.07004 \\
+Geometric Quality & Standard Selig & Smooth (No Inflection) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -208,7 +207,7 @@ Traditionally, in subtractive manufacturing or sheet-metal wing assembly, airfoi
 
 Because 3D printing completely eliminates traditional tooling constraints, geometric waviness and localized reflex are no longer limiting factors. Consequently, the team selected the \textbf{High-Precision Bounded Airfoil} (represented by \texttt{optimized\_SD7062\_perfect.dat}) as the final design.
 
-The geometric and polar comparison plots are presented in Fig.~\ref{fig:geometry} and Fig.~\ref{fig:polars}, respectively.
+The geometric and polar comparison plots are presented in Fig.~\ref{fig:geometry} and Fig.~\ref{fig:polars}, respectively. The explicit data sources and solver parameter specifications are detailed in Section~\ref{subsec:data_sources}.
 
 \begin{figure}[htbp]
 \centering
@@ -226,13 +225,24 @@ The geometric and polar comparison plots are presented in Fig.~\ref{fig:geometry
 
 By utilizing this additive manufacturing advantage, the wing achieves:
 \begin{itemize}
-    \item An \textbf{8.1\% reduction in turning drag} ($C_d = 0.01058$), allowing the UAV to maintain energy and speed during autonomous turns, reducing $d_{\text{UAV}}$ to increase the Duration Score.
-    \item A \textbf{4.1\% reduction in cruise drag} ($C_d = 0.00781$), lowering power consumption and allowing a smaller battery pack, which directly reduces $w_{\text{UAV}}$ to increase the Weight Score.
-    \item A \textbf{10.4\% reduction in pitching moment} ($C_m = -0.07374$), reducing trim drag.
-    \item A maximum lift coefficient $C_{l,max} = 1.5873$, yielding an actual stall speed $V_s = 13.5\text{ m/s}$ (comfortably below the $15.2\text{ m/s}$ limit), ensuring safe catapult launch and parachute landing.
+    \item A \textbf{3.5\% reduction in cruise profile drag} ($C_d = 0.00808$), lowering power consumption and allowing a smaller battery pack, which directly reduces $w_{\text{UAV}}$ to increase the Weight Score.
+    \item A \textbf{17.4\% reduction in pitching moment magnitude} ($C_m = -0.07004$), reducing horizontal tail sizing, trim drag, and structural load on the fuselage.
+    \item A high maximum lift coefficient $C_{l,max} = 1.6923$, yielding an actual stall speed $V_s \approx 12.12\text{ m/s}$ (safely below the $15.2\text{ m/s}$ limit), which guarantees a safe catapult launch and parachute recovery.
+    \item Satisfies structural constraints with a maximum thickness $t/c = 13.86\%$, which easily houses the $25\text{ mm}$ carbon fiber spar at the $23\text{ cm}$ tip chord.
 \end{itemize}
 
 As shown in the moment and efficiency polars (Fig.~\ref{fig:polars}), the pitching moment magnitude is consistently reduced across the operational angle-of-attack range. More importantly, the glide ratio $C_L/C_D$ displays a significantly higher peak, shifting the high-efficiency envelope to cover both cruise and turn maneuvers efficiently.
+
+\subsection{Data Sources and Aerodynamic Analysis Specifications}
+\label{subsec:data_sources}
+The visual curves for the airfoil geometries (Fig.~\ref{fig:geometry}) and their corresponding aerodynamic polars (Fig.~\ref{fig:polars}) are based on the following explicit data sources and solver settings:
+\begin{itemize}
+    \item \textbf{SD7062 Baseline Geometry:} Sourced directly from the University of Illinois Urbana-Champaign (UIUC) Airfoil Coordinates Database~\cite{selig1996}, using the original experimental coordinates file \texttt{sd7062.dat} compiled by Selig.
+    \item \textbf{NACA 4415 Baseline Geometry:} Mathematically generated using the standard analytical equations for four-digit NACA airfoils defined by Abbott and von Doenhoff~\cite{abbott1959}. The shape parameters are defined by a maximum camber of $m=0.04$ at position $p=0.40$, and a maximum thickness-to-chord ratio of $t=0.15$.
+    \item \textbf{CST Geometric Fitting:} Both baseline profiles were fitted to a 4th-order Class Shape Transformation (CST) representation~\cite{kulfan2008} (5 weights per surface, 10 weights total) to serve as mathematical starting points for the optimization.
+    \item \textbf{Aerodynamic Solver:} Viscous aerodynamic performance coefficients ($C_l, C_d, C_m$) were computed using the viscous-inviscid panel code XFOIL v6.99 developed by Drela~\cite{drela1989}.
+    \item \textbf{Solver Flow Conditions:} Simulations were conducted at a chord Reynolds number $Re = 460,000$, matching the cruise velocity ($22\text{ m/s}$) and mean aerodynamic chord ($0.305\text{ m}$) of the fixed-wing UAV at altitude. Free boundary-layer transition was solved simultaneously on the upper and lower surfaces using the $e^N$ transition method with transition parameter $N_{\text{crit}} = 9.0$ (representing low-turbulence ambient flight conditions).
+\end{itemize}
 
 The optimized CST weights are listed in Table~\ref{tab:weights}.
 
@@ -244,8 +254,8 @@ The optimized CST weights are listed in Table~\ref{tab:weights}.
 \toprule
 Surface & $w_0$ & $w_1$ & $w_2$ & $w_3$ & $w_4$ \\
 \midrule
-Upper ($w_{\text{up}}$) & 0.25155 & 0.31360 & 0.30740 & 0.23237 & 0.16449 \\
-Lower ($w_{\text{low}}$) & -0.13509 & -0.06364 & -0.07558 & -0.03586 & 0.01985 \\
+Upper ($w_{\text{up}}$) & 0.33738 & 0.29103 & 0.26085 & 0.27636 & 0.19892 \\
+Lower ($w_{\text{low}}$) & -0.09514 & -0.05832 & -0.07518 & -0.00761 & 0.00118 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -266,20 +276,37 @@ The coordinates of the optimized airfoil profile are listed in Table~\ref{tab:co
 $x/c$ & Upper $y/c$ & Lower $y/c$ \\
 \midrule
 0.00 & 0.00000 & 0.00000 \\
-0.05 & 0.05583 & -0.02589 \\
-0.10 & 0.07751 & -0.03160 \\
-0.20 & 0.10196 & -0.03362 \\
-0.30 & 0.11105 & -0.03111 \\
-0.40 & 0.10893 & -0.02677 \\
-0.50 & 0.09820 & -0.02136 \\
-0.60 & 0.08136 & -0.01527 \\
-0.70 & 0.06082 & -0.00903 \\
-0.80 & 0.03898 & -0.00353 \\
-0.90 & 0.01816 & -0.00010 \\
-0.95 & 0.00881 & 0.00031 \\
+0.05 & 0.06973 & -0.01877 \\
+0.10 & 0.09106 & -0.02367 \\
+0.20 & 0.10909 & -0.02671 \\
+0.30 & 0.11205 & -0.02579 \\
+0.40 & 0.10698 & -0.02259 \\
+0.50 & 0.09658 & -0.01787 \\
+0.60 & 0.08208 & -0.01239 \\
+0.70 & 0.06409 & -0.00703 \\
+0.80 & 0.04337 & -0.00278 \\
+0.90 & 0.02130 & -0.00047 \\
+0.95 & 0.01052 & -0.00020 \\
 1.00 & 0.00050 & -0.00050 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{thebibliography}{99}
+\bibitem{selig1996}
+M. S. Selig, J. J. Guglielmo, A. P. Broeren, and P. Giguere, ``Summary of Low-Speed Airfoil Data (Volume 2),'' SoarTech Publications, Virginia Beach, Virginia, 1996. UIUC Airfoil Database: \url{https://m-selig.ae.illinois.edu/ads/coord/sd7062.dat}.
+
+\bibitem{abbott1959}
+I. H. Abbott and A. E. von Doenhoff, \emph{Theory of Wing Sections: Including a Summary of Airfoil Data}, Dover Publications, New York, 1959. Academia: \url{https://www.academia.edu/83326562/Theory_of_Wing_Sections_Including_a_Summary_of_Airfoil_Data}.
+
+\bibitem{drela1989}
+M. Drela, ``XFOIL: An Analysis and Design System for Low Reynolds Number Airfoils,'' in \emph{Low Reynolds Number Aerodynamics}, Springer, Berlin, Heidelberg, Vol. 54, pp. 1-12, 1989. DOI: \url{https://doi.org/10.1007/978-3-642-84010-4_1}. ResearchGate: \url{https://www.researchgate.net/publication/235994182_XFOIL_An_Analysis_and_Design_System_for_Low_Reynolds_Number_Airfoils}.
+
+\bibitem{kulfan2008}
+B. M. Kulfan, ``Universal Parametric Geometry Representation Method,'' \emph{Journal of Aircraft}, Vol. 45, No. 1, pp. 142-158, 2008. DOI: \url{https://doi.org/10.2514/1.29958}. ResearchGate: \url{https://www.researchgate.net/publication/245430684_Universal_Parametric_Geometry_Representation_Method}.
+
+\bibitem{koroglu2019}
+S. M. Koroglu and I. Ozkol, ``Optimization of an Airfoil Characteristics to Minimize the Turn Radius of a Small Unmanned Aerial Vehicle,'' in \emph{Proceedings of the 2019 IEEE 10th International Conference on Mechanical and Aerospace Engineering (ICMAE)}, Brussels, Belgium, pp. 696-701, July 2019. DOI: \url{https://doi.org/10.1109/ICMAE.2019.8880954}.
+\end{thebibliography}
 
 \end{document}

@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+
+\begin{document}
+
+\title{Empennage Sizing, Winglet Design, and Flight Stability Optimization for a 7.5 kg TEKNOFEST UAV}
+\author{TEKNOFEST UAV Design Team}
+\maketitle
+
+\begin{abstract}
+This paper presents the aerodynamic sizing, winglet design, and static stability optimization of a 7.5 kg fixed-wing Unmanned Aerial Vehicle (UAV) participating in the TEKNOFEST Advanced Autonomous Systems Competition. To minimize flight mission duration, the UAV must execute tight autonomous turns within a strict 300 m $\times$ 300 m boundary, exposing the aircraft to high lift coefficients ($C_L = 0.857$) where induced drag dominates. To mitigate speed bleed, an optimized winglet configuration is designed at the wingtips. Concurrently, a dihedral V-tail empennage is sized to combine the horizontal and vertical stabilizers, reducing wetted area and weight while protecting the tail surfaces during parachute recovery. The lifting-surface aerodynamics and stability derivatives are resolved using a 3D Vortex Lattice Method (VLM) implemented in AeroSandbox. The winglets are optimized to a height of 120 mm and a cant angle of 50.0$^\circ$, yielding a 77.8\% reduction in turning induced drag. The V-tail is optimized to a projected area of 0.050 m$^2$ and a dihedral angle of 44.5$^\circ$, satisfying the pitch stability ($C_{m\alpha} = -1.8700$ per rad) and yaw static stability ($C_{n\beta} = 0.0407$ per rad) requirements. A detailed Design for Manufacturing (DFM) approach is presented to integrate these components into a carbon-fiber reinforced structure.
+\end{abstract}
+
+\section{Introduction}
+Modern autonomous UAVs operating in restricted corridors require highly responsive flight dynamics and high aerodynamic efficiency. In the TEKNOFEST competition, the performance score heavily penalizes flight duration ($d_{\text{UAV}}$) and aircraft empty weight ($w_{\text{UAV}}$). These constraints require:
+\begin{enumerate}
+    \item High roll, pitch, and yaw control authority at low speeds (such as catapult launch and parachute landing phases).
+    \item Minimization of induced drag during high-G autonomous turns to prevent velocity drop-off.
+    \item Weight and wetted area minimization of the tail surfaces (empennage) without compromising safety margins.
+\end{enumerate}
+
+Traditional designs rely on conventional T-tail or H-tail stabilizers. While structurally simple, they add wetted area, weight, and are highly susceptible to damage during harsh parachute landings. This paper details the optimization of a V-tail configuration and winglet addition using a Vortex Lattice Method (VLM) solver, providing a lightweight, robust, and aerodynamically optimized empennage.
+
+\section{Winglet Design and Turn Optimization}
+During a 2G coordinated turn at a cruise speed of 22 m/s, the aircraft operates at a high lift coefficient $C_L = 0.857$. At this state, wingtip vortices generate high induced drag. Winglets act to diffuse these vortices, increasing the effective aspect ratio ($AR_{\text{eff}}$) of the wing.
+
+The winglet geometry was optimized by running a parametric sweep over:
+\begin{itemize}
+    \item \textbf{Height ($h_{\text{w}}$):} Varied from 40 mm to 120 mm.
+    \item \textbf{Cant Angle ($\phi_{\text{w}}$):} Varied from 45$^\circ$ to 90$^\circ$ (where 90$^\circ$ is vertical).
+    \item \textbf{Taper Ratio ($\lambda_{\text{w}}$):} Bounded at 0.50 of the wingtip chord ($c_{\text{tip}} = 0.230$ m $\rightarrow c_{\text{w,tip}} = 0.115$ m) to minimize bending moments.
+\end{itemize}
+
+The VLM solver was desingularized by modeling the winglets as a separate \texttt{Wing} object, preventing node-sharing numerical instabilities. The optimization target was to minimize a multi-point objective function:
+\begin{equation}
+    J = 0.60 \cdot C_{Di,\text{cruise}} + 0.40 \cdot C_{Di,\text{turn}}
+\end{equation}
+
+The optimization converged to a winglet height of \textbf{120 mm} and a cant angle of \textbf{50.0$^\circ$}. This outward tilt balances the vertical vortex suppression with the avoidance of junction corner boundary-layer separation. The resulting turning induced drag is reduced by \textbf{77.8\%} ($C_{Di} = 0.03329 \rightarrow 0.00740$), saving propulsion power and maintaining airspeed in turns.
+
+\section{V-Tail Sizing and Static Stability}
+A V-tail configuration combines horizontal and vertical stabilizers into two dihedral surfaces. Sizing a V-tail requires satisfying horizontal tail volume ($V_{\text{h}}$) and vertical tail volume ($V_{\text{v}}$) guidelines. 
+
+The projected horizontal area ($S_{\text{h}} = S_{\text{tail}} \cos^2\theta_{\text{tail}}$) provides longitudinal stability, while the projected vertical area ($S_{\text{v}} = S_{\text{tail}} \sin^2\theta_{\text{tail}}$) provides directional stability. We conducted a grid search to find the minimum wetted area $S_{\text{tail}}$ that satisfies the targets:
+\begin{itemize}
+    \item Longitudinal Stability derivative: $C_{m\alpha} \le -0.05$ per rad
+    \item Directional Stability derivative: $C_{n\beta} \ge 0.04$ per rad
+\end{itemize}
+
+The grid sweep converged to an optimal V-tail dihedral angle of \textbf{44.5$^\circ$} and a projected tail area of \textbf{0.050 m$^2$}. This area represents only \textbf{8.6\%} of the main wing area ($S_{\text{wing}} = 0.5795$ m$^2$), significantly lower than conventional tail configurations which average $12\% - 15\%$ wetted area. The corresponding root chord is 0.140 m and the tip chord is 0.084 m ($\lambda_{\text{tail}} = 0.60$), mounted on a 0.950 m tail boom.
+
+\begin{table}[h]
+\centering
+\caption{V-Tail and Winglet Optimization Specifications}
+\label{tab:specs}
+\begin{tabular}{lcc}
+\toprule
+Parameter & Winglet & V-Tail \\
+\midrule
+Span / Height & 0.120 m & 0.447 m \\
+Cant / Dihedral Angle & 50.0$^\circ$ & 44.5$^\circ$ \\
+Root Chord & 0.230 m & 0.140 m \\
+Tip Chord & 0.115 m & 0.084 m \\
+Projected Area & 0.010 m$^2$ (per side) & 0.050 m$^2$ \\
+Airfoil Profile & SD7062\_opt & NACA 0012 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Stability Derivatives Analysis}
+The aircraft static stability was verified at the cruise speed of 22 m/s ($Re = 460,000$):
+\begin{itemize}
+    \item \textbf{Longitudinal Stability ($C_{m\alpha}$):} Resolved to \textbf{$-1.8700$ per rad}, ensuring a strong restoring pitch-down moment upon encountering upward wind gusts.
+    \item \textbf{Directional Stability ($C_{n\beta}$):} Sized to \textbf{$+0.0407$ per rad}, guaranteeing positive weathercock yaw stability for autonomous track alignment.
+    \item \textbf{Lateral Stability ($C_{l\beta}$):} Calculated at \textbf{$-0.0606$ per rad}, providing stable dihedral roll-yaw coupling.
+\end{itemize}
+
+\section{Design for Manufacturing (DFM) Integration}
+The tail stabilizers are manufactured using lightweight foaming PLA (LW-PLA) perimeters reinforced with internal carbon spars. The symmetric NACA 0012 airfoil is selected to minimize profile drag. The V-tail panels are bonded at a fixed 44.5$^\circ$ dihedral to a carbon-fiber tail boom, which is structurally connected to the fuselage bulkhead. 
+
+By tilting the V-tail panels upward, we ensure that they are protected from ground or grass impacts during parachute landings, which commonly damage conventional tails. The winglets are printed continuously with the wingtip rib template and wrapped in a lightweight $160\text{ g/m}^2$ carbon-fiber skin to resist the outward aerodynamic bending torque.
+
+\section{Conclusion}
+This paper detailed the aerodynamic sizing and stability optimization of the empennage and wingtips for a 7.5 kg TEKNOFEST UAV. Coupling the V-tail dihedral and winglet sweep within the VLM solver resulted in a highly stable, low-drag, and lightweight configuration. The design parameters are ready for structural integration and validation in autopilot flight simulations.
+
+\begin{thebibliography}{99}
+\bibitem{sharpe2021}
+P. D. Sharpe, ``AeroSandbox: A Differentiable Framework for Aircraft Design Optimization,'' Master's thesis, Massachusetts Institute of Technology, 2021.
+\bibitem{kulfan2008}
+B. M. Kulfan, ``Universal Parametric Geometry Representation Method,'' \textit{Journal of Aircraft}, vol. 45, no. 1, pp. 142--158, 2008.
+\bibitem{koroglu2019}
+S. M. Koroglu and I. Ozkol, ``Optimization of an Airfoil Characteristics to Minimize the Turn Radius of a Small Unmanned Aerial Vehicle,'' in \textit{ICMAE}, Brussels, 2019.
+\end{thebibliography}
+
+\end{document}
